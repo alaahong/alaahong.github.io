@@ -1,4 +1,4 @@
-baseURL = "http://ianzhang.cn/"
+baseURL = "//www.ianzhang.cn/"
 languageCode = "en-us"
 title = "手中执剑,方能保护所爱之人"
 theme = "hugo-coder"
