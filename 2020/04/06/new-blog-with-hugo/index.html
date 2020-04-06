@@ -111,7 +111,7 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              1-minute read
+              2-minute read
             </span>
           </div>
           
@@ -183,6 +183,21 @@ Total in 119 ms
 </code></pre></div><p>本地预览一下</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">hugo server
 </code></pre></div><p><img src="//www.ianzhang.cn/images/2020-04-06_16_37_18-%E6%89%8B%E4%B8%AD%E6%89%A7%E5%89%91,%E6%96%B9%E8%83%BD%E4%BF%9D%E6%8A%A4%E6%89%80%E7%88%B1%E4%B9%8B%E4%BA%BA.png" alt="image"></p>
+<h1 id="增加评论">增加评论</h1>
+<p><a href="https://gohugo.io/content-management/comments/">官方推荐</a>的是Disqus，这里采用的是<a href="https://utteranc.es/">utteranc</a></p>
+<p>首先建立一个评论专用的repo</p>
+<p><img src="//www.ianzhang.cn/images/2020-04-06_21_10_54-Window.png" alt="image"></p>
+<p>新建评论标签</p>
+<p><img src="//www.ianzhang.cn/images/2020-04-06_21_12_20-Window.png" alt="image"></p>
+<p>添加配置</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[params.utteranc]
+    enable = true
+    repo = &#34;alaahong/hugoblogcomments&#34;    # 存储评论的Repo，格式为 owner/repo
+    issueTerm = &#34;pathname&#34;  #表示你选择以那种方式让github issue的评论和你的文章关联。
+    theme = &#34;github-light&#34; # 样式主题，有github-light和github-dark两种
+    label = &#34;BlogComments&#34;  # Github Issue的标签,要先在repo里面建立这个标签
+</code></pre></div><p>效果如下</p>
+<p><img src="//www.ianzhang.cn/images/2020-04-06_21_13_43-Window.png" alt="image"></p>
 
       </div>
 
