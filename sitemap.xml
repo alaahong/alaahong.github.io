@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>//www.ianzhang.cn/new-blog-with-hugo/</loc>
+    <loc>//www.ianzhang.cn/posts/new-blog-with-hugo/</loc>
+    <lastmod>2020-04-06T14:54:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//www.ianzhang.cn/posts/</loc>
     <lastmod>2020-04-06T14:54:53+08:00</lastmod>
   </url>
   

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>手中执剑,方能保护所爱之人</title>
-    <link>//www.ianzhang.cn/</link>
-    <description>Recent content on 手中执剑,方能保护所爱之人</description>
+    <title>Posts on 手中执剑,方能保护所爱之人</title>
+    <link>//www.ianzhang.cn/posts/</link>
+    <description>Recent content in Posts on 手中执剑,方能保护所爱之人</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 Apr 2020 14:54:53 +0800</lastBuildDate>
     
-	<atom:link href="//www.ianzhang.cn/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="//www.ianzhang.cn/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
