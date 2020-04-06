@@ -13,10 +13,10 @@
     
     <item>
       <title>New Blog With Hugo</title>
-      <link>//www.ianzhang.cn/posts/new-blog-with-hugo/</link>
+      <link>//www.ianzhang.cn/2020/04/06/new-blog-with-hugo/</link>
       <pubDate>Mon, 06 Apr 2020 14:54:53 +0800</pubDate>
       
-      <guid>//www.ianzhang.cn/posts/new-blog-with-hugo/</guid>
+      <guid>//www.ianzhang.cn/2020/04/06/new-blog-with-hugo/</guid>
       <description>最近翻译Selenium官方文档的缘故，接触了Hugo，原本的博客有些年久失修，决定用Hugo重新做一版.
 安装Hugo 此段详见官网教程，Windows上建议通过Chocolatey安装
 &amp;gt; choco install hugo-extended -confirm Chocolatey v0.10.15 Installing the following packages: hugo-extended By installing you accept licenses for the packages. hugo-extended v0.68.3 [Approved] hugo-extended package files install completed. Performing other installation steps. Downloading hugo-extended 64 bit from &amp;#39;https://github.com/gohugoio/hugo/releases/download/v0.68.3/hugo_extended_0.68.3_Windows-64bit.zip&amp;#39; Progress: 100% - Completed download of C:\Users\Ian\AppData\Local\Temp\chocolatey\hugo-extended\0.68.3\hugo_extended_0.68.3_Windows-64bit.zip (36.25 MB). Download of hugo_extended_0.68.3_Windows-64bit.zip (36.25 MB) completed. Hashes match. Extracting C:\Users\Ian\AppData\Local\Temp\chocolatey\hugo-extended\0.68.3\hugo_extended_0.68.3_Windows-64bit.zip to C:\ProgramData\chocolatey\lib\hugo-extended\tools... C:\ProgramData\chocolatey\lib\hugo-extended\tools ShimGen has successfully created a shim for hugo.</description>
