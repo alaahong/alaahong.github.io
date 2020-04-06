@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 
   <head>
     <meta charset="utf-8">
@@ -111,14 +111,25 @@
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              2-minute read
+              275 Words,
+              2 分钟阅读时间
             </span>
           </div>
           
           
         </div>
       </header>
-
+      <aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装hugo">安装Hugo</a></li>
+    <li><a href="#制作站点">制作站点</a></li>
+    <li><a href="#增加评论">增加评论</a></li>
+    <li><a href="#toc目录">TOC目录</a></li>
+    <li><a href="#编译部署">编译部署</a></li>
+  </ul>
+</nav>
+      </aside>
       <div>
         
         <p>最近翻译<a href="https://www.selenium.dev/documentation/">Selenium官方文档</a>的缘故，接触了<a href="https://gohugo.io/">Hugo</a>，原本的博客有些年久失修，决定用Hugo重新做一版.</p>
@@ -198,6 +209,23 @@ Total in 119 ms
     label = &#34;BlogComments&#34;  # Github Issue的标签,要先在repo里面建立这个标签
 </code></pre></div><p>效果如下</p>
 <p><img src="//www.ianzhang.cn/images/2020-04-06_21_13_43-Window.png" alt="image"></p>
+<h1 id="toc目录">TOC目录</h1>
+<p>官方有实现<a href="https://gohugo.io/content-management/toc/">TOC</a>，但是网上资料比较旧，涉及这个的不太多。将以下内容添加到single.html里合适的位置即可</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    &lt;aside&gt;
+        {{ .TableOfContents }}
+    &lt;/aside&gt;
+</code></pre></div><p><a href="https://gohugo.io/getting-started/configuration-markup/#table-of-contents">这里</a>有对应的配置项</p>
+<h1 id="编译部署">编译部署</h1>
+<p>推荐将github的静态页资源作为子模块</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git submodule add -b master https://github.com/alaahong/alaahong.github.io.git public
+</code></pre></div><p>官网给了linux环境下的<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">一键部署</a>，仿照着这里提供一个windows下的脚本</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">hugo
+cd public
+git add --all
+git commit -m <span style="font-style:italic">&#34;Publishing to github&#34;</span>
+git push
+cd ..
+</code></pre></div><p>保存以上内容到deploy.cmd，每次修改后执行此脚本，会自动将public下的全部新增未忽略文件推送到github.</p>
 
       </div>
 
@@ -237,7 +265,7 @@ Total in 119 ms
       
       
          · 
-        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+        技术支持 <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
       
       
     </section>
