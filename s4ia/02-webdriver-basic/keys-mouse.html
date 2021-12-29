@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #menu {
+        width: 80px;
+        background: #CCC;
+        position: absolute;
+        display: none;
+    }
+
+    #menu ul {
+        width: 100%;
+        list-style: none;
+        border: 2px solid #666;
+        border-bottom: 0px;
+    }
+
+    #menu ul li {
+        height: 30px;
+        font-size: 16px;
+        color: #333;
+        line-height: 30px;
+        text-align: center;
+        border-bottom: 2px solid #666;
+    }
+</style>
+<body>
+<div>
+    <div><h1>Mouse</h1></div>
+    <div>
+        <input id="showMessage" type="button" value="show me" onclick="showMessageAfterClickMe()"/>
+        <input id="hideMessage" type="button" value="hide me" onclick="hiddenMessageAfterClickMe()"/>
+    </div>
+    <div id="menu">
+        <ul>
+            <li id="showMessageAfterClickLi" onclick="showMessageAfterClickMe()">show</li>
+            <li id="hiddenMessageAfterClickLi" onclick="hiddenMessageAfterClickMe()">hidden</li>
+        </ul>
+    </div>
+    <div><p id="message" hidden="hidden">I'm the message</p></div>
+</div>
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        var menu = document.getElementById("menu");
+        document.oncontextmenu = function (ev) {
+            var ev = ev || event;
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            menu.style.display = "block";
+            menu.style.left = ev.clientX + "px";
+            //当滑动滚动条时也能准确获取菜单位置
+            menu.style.top = ev.clientY + scrollTop + "px";
+            //阻止默认菜单事件
+            return false;
+        }
+        //点击空白部分+菜单
+        document.onclick = function () {
+            menu.style.display = 'none';
+            console.log(this);
+        }
+        //点击菜单
+        menu.onclick = function (e) {
+            var e = e || window.event;
+            e.cancelBubble = true;
+        }
+    }
+
+    function showMessageAfterClickMe() {
+        document.querySelector("#message").removeAttribute("hidden")
+    }
+
+    function hiddenMessageAfterClickMe() {
+        document.querySelector("#message").setAttribute("hidden", "hidden")
+    }
+    function getTheSelectedText() {
+        let txt;
+        //做能力检测，检查是IE还是非IE
+        if (document.selection) {
+            txt = document.selection.createRange().text; // IE
+        } else {
+            txt = document.getSelection();//非IE
+        }
+        return txt.toString();
+    }
+
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keys</title>
+</head>
+<body>
+<div>
+    <div><h1>SendKeys</h1></div>
+    <div>
+        <input id="sendKeys" placeholder="sendKeys"/>
+    </div>
+</div>
+<div>
+    <div><h1>SendKeys with Enter</h1></div>
+    <div>
+        <textarea id="sendKeysWithEnter" placeholder="sendKeysWithEnter"></textarea>
+    </div>
+</div>
+<div>
+    <div><h1>SendKeys to Copy</h1></div>
+    <div>
+        <input id="username" placeholder="username"/>
+        <input id="copy" type="button" value="login"
+               onclick="document.querySelector('#afterLogon').textContent=document.querySelector('#username').value">
+    </div>
+    <div><p id="afterLogon"></p></div>
+</div>
+<div>
+    <div><h1>SendKeys with Tab</h1></div>
+    <div>
+        <button id="btn1">first button</button>
+        <button id="btn2">second button</button>
+        </button>
+    </div>
+</div>
+</body>
+</html>

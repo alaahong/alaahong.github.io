@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Block</title>
+</head>
+<body>
+
+div是一个没有特殊意义的块级元素，常用来与其他元素组合使用。区别于旧式的表格布局，现代开发者往往利用div组合出复杂的页面布局。
+<div>div</div>
+
+form通常与input一起搭配使用，通过多个输入框，完成一定信息的录入提交操作。例如常见的登录表单，可以通过text、password、submit等多种input与form组合实现。
+<form action="login">
+    Username: <input type="text" name="username"><br>
+    Password: <input type="password" name="password"><br>
+    <input type="submit" value="Login">
+</form>
+
+HTML默认提供了六级标题的实现，效果如下
+h1/h2/h3/h4/h5/h6
+<h1>h1</h1>
+<h2>h2</h2>
+<h3>h3</h3>
+<h4>h4</h4>
+<h5>h5</h5>
+<h6>h6</h6>
+<h7>没有h7</h7>
+
+hr是水平分隔符，视觉上提供一条线用于区分上下两行的内容
+<hr>
+
+ul是无序列表，类似于办公软件中的项目符号，完成没有顺序的列表标记
+<ul>
+    <li>ul1</li>
+    <li>ul2
+        <ul>
+            <li>ul2.1</li>
+            <li>ul2.2
+                <ul>
+                    <li>ul2.2.1</li>
+                    <li>ul2.2.2</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>ul3</li>
+</ul>
+
+ol是有序列表，默认从1.开始计数。
+<ol>
+    <li>ol1</li>
+    <li>ol2
+        <ol>
+            <li>ol2.1</li>
+            <li>ol2.2
+                <ol>
+                    <li>ol2.2.1</li>
+                    <li>ol2.2.2</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <li>ol3</li>
+</ol>
+
+table可以由简单的tr、th、td等标签组合而成，也可以通过复杂的caption、thead、tbody等标签完成构建。
+<table border="1">
+    <tr>
+        <th>简单</th>
+        <th>表格</th>
+    </tr>
+    <tr>
+        <td>表格</td>
+        <td>内容</td>
+    </tr>
+</table>
+
+
+<table border="1">
+    <caption>复杂表格</caption>
+    <thead>
+    <tr>
+        <th>表头</th>
+        <th>表头</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>cell</td>
+        <td>cell</td>
+    </tr>
+    <tr>
+        <td>cell</td>
+        <td>cell</td>
+    </tr>
+    </tbody>
+</table>
+
+p是代表段落的标签，通常用于修饰成段落的文本内容
+<p>p</p>
+</body>
+</html>
