@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find Elements</title>
+    <style>
+.potato:before {
+content: "🥔";
+}
+.eggplant:before {
+content: "🍆";
+}
+.pepper:before {
+content: "🌶️";
+}
+.apple:before {
+content: "🍎";
+}
+.pear:before {
+content: "🍐";
+}
+.banana:before {
+content: "🍌";
+}
+
+
+
+
+    </style>
+</head>
+<body>
+<div id="main">
+    <div name="item">
+        <ul id="vegetable">
+            <li class="vegetable potato">potato</li>
+            <li class="vegetable eggplant">eggplant</li>
+            <li class="vegetable pepper">pepper</li>
+        </ul>
+    </div>
+    <div name="item">
+        <ol id="fruit">
+            <li class="fruit apple">apple</li>
+            <li class="fruit pear">pear</li>
+            <li class="fruit banana">banana</li>
+        </ol>
+    </div>
+    <div name="item">
+        <label for="activeElement">ActiveElement:</label>
+        <input id="activeElement" type="text"/>
+    </div>
+</div>
+</body>
+</html>
