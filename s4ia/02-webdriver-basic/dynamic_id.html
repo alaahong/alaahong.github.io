@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Element</title>
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+        <v-container>
+            <!--            指定id的input-->
+            <v-text-field id="customizedId" v-model="dynamicElement" :counter="10"
+                          label="Customized Element"></v-text-field>
+            <!--            未指定id的input，由框架自动分配随机id-->
+            <v-text-field v-model="dynamicElement" :counter="10" label="Dynamic Element"></v-text-field>
+        </v-container>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+    })
+</script>
+</body>
+</html>
