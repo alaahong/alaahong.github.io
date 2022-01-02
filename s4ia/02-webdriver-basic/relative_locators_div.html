@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+.box {
+  display: grid;
+  height: 600px;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+ grid-template-rows: repeat(3, 1fr);
+}
+.box > div {
+  width: 98%;
+  margin: 1%;
+  background-color: #0473E9;
+  text-align: center;
+  line-height: 200px;
+}
+.box > div:nth-child(even) {
+  background-color: #38D200;
+  color: #fff;
+}
+    </style>
+</head>
+<body>
+<div class="sec02">
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+</div>
+</body>
+</html>
