@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Find Elements</title>
+    <!--    通过伪类为文本提供可视化的图标-->
     <style>
 .potato:before {
 content: "🥔";
@@ -24,13 +25,12 @@ content: "🍌";
 }
 
 
-
-
     </style>
 </head>
 <body>
 <div id="main">
     <div name="item">
+        <!--        定义包含三种蔬菜的无序列表-->
         <ul id="vegetable">
             <li class="vegetable potato">potato</li>
             <li class="vegetable eggplant">eggplant</li>
@@ -38,12 +38,14 @@ content: "🍌";
         </ul>
     </div>
     <div name="item">
+        <!--        定义包括三种水果的有序列表-->
         <ol id="fruit">
             <li class="fruit apple">apple</li>
             <li class="fruit pear">pear</li>
             <li class="fruit banana">banana</li>
         </ol>
     </div>
+    <!--    定义一个input元素,用于焦点定位-->
     <div name="item">
         <label for="activeElement">ActiveElement:</label>
         <input id="activeElement" type="text"/>
