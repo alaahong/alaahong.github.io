@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>find element information</title>
+</head>
+<body>
+<div>
+    <div>
+        <!--        期望获取标签名p，并非标签的名字tagName-->
+        <h2>getTagName</h2>
+        <div><p id="tag-name" name="tagName">getTagName</p></div>
+    </div>
+
+    <div>
+        <!--        期望获取页面元素的attribute属性-->
+        <h2>getDomAttribute</h2>
+        <div><p id="dom-attribute" aria-valuetext="getDomAttribute">getDomAttribute</p></div>
+    </div>
+
+    <div>
+        <!--        期望获取页面元素的property属性-->
+        <h2>getDomProperty</h2>
+        <div><input readonly="readonly" type="text" id="dom-property-1" required/></div>
+        <div><input checked type="checkbox" id="dom-property-2"/></div>
+        <div><p id="dom-property-3">getDomProperty</p></div>
+    </div>
+
+    <div>
+        <!--        期望获取页面元素的属性-->
+        <h2>getAttribute</h2>
+        <div><input readonly="readonly" required="required" type="text" id="get-property-1"/></div>
+        <div><input readonly checked required type="checkbox" id="get-property-2"/></div>
+        <div><p id="get-property-3" class="test attribute">getDomProperty</p></div>
+    </div>
+
+</div>
+
+</body>
+</html>
