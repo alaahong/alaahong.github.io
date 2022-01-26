@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get element information</title>
+</head>
+<body>
+<div>
+    <div>
+        <div><h2>getTagName</h2></div>
+        <div name="get-tag-name">tag1</div>
+        <i-am-a-tag name="get-tag-name">tag2</i-am-a-tag>
+    </div>
+    <div>
+        <!--        期望获取页面元素的文本-->
+        <div><h2>getText</h2></div>
+        <div name="get-text">text1</div>
+        <div name="get-text"><p>text2</p></div>
+        <div><input name="get-text">text3</input></div>
+        <div><input name="get-text" value="text4"/></div>
+        <div>
+            <select name="get-text">
+                <option value="value5">text5</option>
+                <option value="value6" selected>text6</option>
+                <option value="value7">text7</option>
+            </select>
+        </div>
+        <div>
+            <input type="radio" name="get-text-radio" value="value1">radio1 <br>
+            <input type="radio" name="get-text-radio" value="value2">radio2
+        </div>
+        <div>
+            <input type="checkbox" name="get-text-checkbox" value="value1">checkbox1 <br>
+            <input type="checkbox" name="get-text-checkbox" value="value2">checkbox2
+        </div>
+        <div>
+            <button id="get-text-btn" value="value1">button1</button>
+        </div>
+    </div>
+    <div>
+        <!--        期望获取页面元素的attribute属性-->
+        <h2>getDomAttribute</h2>
+        <div><p id="dom-attribute" aria-valuetext="getDomAttribute">getDomAttribute</p></div>
+    </div>
+
+    <div>
+        <!--        期望获取页面元素的property属性-->
+        <h2>getDomProperty</h2>
+        <div><input readonly="readonly" type="text" id="dom-property-1" required/></div>
+        <div><input checked type="checkbox" id="dom-property-2"/></div>
+        <div><p id="dom-property-3">getDomProperty</p></div>
+    </div>
+
+    <div>
+        <!--        期望获取页面元素的属性-->
+        <h2>getAttribute</h2>
+        <div><input readonly="readonly" required="required" type="text" id="get-property-1"/></div>
+        <div><input readonly checked required type="checkbox" id="get-property-2"/></div>
+        <div><p id="get-property-3" class="test attribute">getDomProperty</p></div>
+    </div>
+
+</div>
+
+</body>
+</html>
