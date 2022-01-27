@@ -11,6 +11,41 @@
         <div name="get-tag-name">tag1</div>
         <i-am-a-tag name="get-tag-name">tag2</i-am-a-tag>
     </div>
+
+
+    <div>
+        <div><h2>getAccessibleName</h2></div>
+        <div>
+            <!--        期望可以获取AccessibleName为label的值-->
+            <label for="get-accessible-name-1">from label</label>
+            <input type="text" id="get-accessible-name-1">
+        </div>
+        <div>
+            <!--        期望可以获取AccessibleName为title的值-->
+            <input type="text" id="get-accessible-name-2" title="from title">
+        </div>
+        <div>
+            <!--        期望可以获取AccessibleName为placeholder的值-->
+            <input type="text" id="get-accessible-name-3" placeholder="from placeholder">
+        </div>
+        <div>
+            <!--        期望可以获取AccessibleName为aria-placeholder的值-->
+            <input type="text" id="get-accessible-name-4" aria-placeholder="from aria-placeholder">
+        </div>
+        <div>
+            <!--        期望可以获取AccessibleName为aria-label的值-->
+            <input type="text" id="get-accessible-name-5" aria-label="from aria-label">
+        </div>
+        <div>
+            <!--        当同时具备多个匹配AccessibleName的条件时，期望获取aria-label的值-->
+            <label for="get-accessible-name-6">from label</label>
+            <input type="text" id="get-accessible-name-6"
+                   title="from title"
+                   placeholder="from placeholder"
+                   aria-placeholder="from aria-placeholder"
+                   aria-label="from aria-label">
+        </div>
+    </div>
     <div>
         <!--        期望获取页面元素的文本-->
         <div><h2>getText</h2></div>
@@ -54,9 +89,10 @@
     <div>
         <!--        期望获取页面元素的属性-->
         <h2>getAttribute</h2>
-        <div><input readonly="readonly" required="required" type="text" id="get-property-1"/></div>
-        <div><input readonly checked required type="checkbox" id="get-property-2"/></div>
-        <div><p id="get-property-3" class="test attribute">getDomProperty</p></div>
+        <div><input readonly="readonly" type="text" id="get-attribute-1"></div>
+        <div><input checked type="checkbox" id="get-attribute-2"></div>
+        <div><p id="get-attribute-3" class="test attribute">class attribute</p></div>
+        <div><input id="get-attribute-4" value="value attribute"></div>
     </div>
 
 </div>
