@@ -89,9 +89,13 @@
     <div>
         <!--        期望获取页面元素的属性-->
         <h2>getAttribute</h2>
+        <!--        布尔属性的值应该返回true或null，即使设置了其他的值-->
         <div><input readonly="readonly" type="text" id="get-attribute-1"></div>
+        <!--        布尔属性的值应该返回true或null，即使未设置值，但是为声明的属性值为null-->
         <div><input checked type="checkbox" id="get-attribute-2"></div>
+        <!--        由多个className组合而成的class属性将返回完整的值，并不涉及到拆分-->
         <div><p id="get-attribute-3" class="test attribute">class attribute</p></div>
+        <!--        属性会直接返回对应的值-->
         <div><input id="get-attribute-4" value="value attribute"></div>
     </div>
 
