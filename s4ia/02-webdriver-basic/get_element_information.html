@@ -11,8 +11,6 @@
         <div name="get-tag-name">tag1</div>
         <i-am-a-tag name="get-tag-name">tag2</i-am-a-tag>
     </div>
-
-
     <div>
         <div><h2>getAccessibleName</h2></div>
         <div>
@@ -49,27 +47,40 @@
     <div>
         <!--        期望获取页面元素的文本-->
         <div><h2>getText</h2></div>
-        <div name="get-text">text1</div>
-        <div name="get-text"><p>text2</p></div>
-        <div><input name="get-text">text3</input></div>
-        <div><input name="get-text" value="text4"/></div>
+        <div id="get-text-1">text1</div>
+        <div id="get-text-2">text<span>2</span></div>
+        <div><input id="get-text-3" value="test3"></div>
+        <div><label for="get-text-4">text4</label><input id="get-text-4" value="text4"/></div>
         <div>
-            <select name="get-text">
-                <option value="value5">text5</option>
-                <option value="value6" selected>text6</option>
-                <option value="value7">text7</option>
+            <select id="get-text-5">
+                <option value="option1">option1</option>
+                <option value="option2" selected>option2</option>
             </select>
+            <select id="get-text-6"/>
+            <select id="get-text-7"></select>
         </div>
-        <div>
-            <input type="radio" name="get-text-radio" value="value1">radio1 <br>
-            <input type="radio" name="get-text-radio" value="value2">radio2
+        <div id="get-text-8">
+            <!--            input为自闭合标签，此处的</input>其实是无效的，实际浏览器渲染的时候会将其省略-->
+            <input type="radio" name="get-text-radio" value="value1">radio1</input>
+            <!--            此处因为没有换行符，所以Selenium会自行增加空格-->
+            <input type="radio" name="get-text-radio" value="value1">radio2
+            <!--            此处有换行符，所以Selenium不会自行增加空格-->
+            <input type="radio" name="get-text-radio" value="value2"><br>radio3<br>
+            <!--            此处有换行符，所以Selenium不会自行增加空格，结尾处的换行标签会被自动忽略-->
+            <input type="radio" name="get-text-radio" value="value3">radio4<br>
         </div>
-        <div>
-            <input type="checkbox" name="get-text-checkbox" value="value1">checkbox1 <br>
+        <div id="get-text-9">
+            <!--            checkbox采用与上述radio相同的input标签，所以getText的逻辑一致-->
+            <input type="checkbox" name="get-text-checkbox" value="value1">checkbox1</input>
             <input type="checkbox" name="get-text-checkbox" value="value2">checkbox2
+            <input type="checkbox" name="get-text-checkbox" value="value3"><br>checkbox3 <br>
+            <input type="checkbox" name="get-text-checkbox" value="value4">checkbox4
         </div>
         <div>
-            <button id="get-text-btn" value="value1">button1</button>
+            <!--            button标签定义的按钮，可以获得text-->
+            <button id="get-text-10" value="value1">button1</button>
+            <!--            input标签定义的按钮，无法获得text-->
+            <input id="get-text-11" type="button" value="button2">
         </div>
     </div>
     <div>
@@ -197,6 +208,16 @@
   shadowRoot2.innerHTML = `
               <span id="shadow-content-1">shadow-content-1</span>
             `;
+
+
+
+
+
+
+
+
+
+
 
 </script>
 </body>
