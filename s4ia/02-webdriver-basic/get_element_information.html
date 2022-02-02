@@ -196,7 +196,89 @@
             <div id="get-shadow-root-2"></div>
         </div>
     </div>
+    <div>
+        <!--        判断是否显示-->
+        <h2>isDisplayed</h2>
+        <!--      定义待挂载的元素-->
+        <div>
+            <div id="is-displayed-1" style="width: 200px; height: 20px; background-color: blue;">is-displayed-1</div>
+        </div>
+        <div>
+            <div id="is-displayed-2" hidden style="width: 200px; height: 20px; background-color: blue;">is-displayed-2
+            </div>
+        </div>
+        <div hidden>
+            <div id="is-displayed-3" style="width: 200px; height: 20px; background-color: blue;">is-displayed-3</div>
+        </div>
+        <div>
+            <div id="is-displayed-4" style="visibility: hidden; width: 200px; height: 20px; background-color: blue;">
+                is-displayed-4
+            </div>
+        </div>
+        <div>
+            <div id="is-displayed-5" style="display: none; width: 200px; height: 20px; background-color: blue;">
+                is-displayed-5
+            </div>
+        </div>
+    </div>
+    <div>
+        <!--        判断元素是否可编辑-->
+        <h2>isEnabled</h2>
+        <!--      定义普通的input-->
+        <div>
+            <input id="is-enabled-1" value="is-enabled-1">
+        </div>
+        <!--      定义disabled的input-->
+        <div>
+            <input id="is-enabled-2" disabled value="is-enabled-2">
+        </div>
+        <!--      定义disabled的select-->
+        <div>
+            <select id="is-enabled-3" disabled>
+                <option>is-enabled-3</option>
+            </select>
+        </div>
+        <!--      定义disabled的textarea-->
+        <div>
+            <textarea id="is-enabled-4" disabled>is-enabled-4</textarea>
+        </div>
+        <!--      定义disabled的p-->
+        <div>
+            <p id="is-enabled-5" disabled>is-enabled-5</p>
+        </div>
+    </div>
 
+    <div>
+        <!--        判断元素是否被选择-->
+        <h2>isSelected</h2>
+        <!--      定义待挂载的元素-->
+        <div>
+            <input id="is-selected-1" type="checkbox" value="is-selected-1">
+            <input id="is-selected-2" checked type="checkbox" value="is-selected-2">
+        </div>
+        <div>
+            <select id="is-selected-3" title="is-selected-3">
+                <option>is-selected-3-1</option>
+                <option selected>is-selected-3-2</option>
+            </select>
+        </div>
+        <div>
+            <select id="is-selected-4" multiple title="is-selected-4">
+                <option>is-selected-4-1</option>
+                <option selected>is-selected-4-2</option>
+                <option selected>is-selected-4-3</option>
+            </select>
+        </div>
+        <div>
+            <input type="radio" id="is-selected-5"> is-selected-5
+            <input type="radio" checked id="is-selected-6"> is-selected-6
+        </div>
+        <div>
+            <p checked id="is-selected-7">is-selected-7</p>
+        </div>
+        <div>
+        </div>
+    </div>
 </div>
 <script>
  let shadowRoot1 = document.getElementById('get-shadow-root-1').attachShadow({mode: 'open'});
@@ -208,16 +290,6 @@
   shadowRoot2.innerHTML = `
               <span id="shadow-content-1">shadow-content-1</span>
             `;
-
-
-
-
-
-
-
-
-
-
 
 </script>
 </body>
