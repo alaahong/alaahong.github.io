@@ -1,8 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouse</title>
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+
+
+
+    </script>
 </head>
 <style>
     * {
@@ -32,22 +61,38 @@
         text-align: center;
         border-bottom: 2px solid #666;
     }
+
+
+
 </style>
 <body>
-<div>
-    <div><h1>Mouse</h1></div>
+<div id="container">
     <div>
-        <input id="showMessage" type="button" value="show me" onclick="showMessageAfterClickMe()"/>
-        <input id="hideMessage" type="button" value="hide me" onclick="hiddenMessageAfterClickMe()"/>
+        <div><h1>Mouse</h1></div>
+        <div>
+            <input id="showMessage" type="button" value="show me" onclick="showMessageAfterClickMe()"/>
+            <input id="hideMessage" type="button" value="hide me" onclick="hiddenMessageAfterClickMe()"/>
+        </div>
+        <div id="menu">
+            <ul>
+                <li id="showMessageAfterClickLi" onclick="showMessageAfterClickMe()">show</li>
+                <li id="hiddenMessageAfterClickLi" onclick="hiddenMessageAfterClickMe()">hidden</li>
+            </ul>
+        </div>
+        <div><p id="message" hidden="hidden">I'm the message</p></div>
     </div>
-    <div id="menu">
-        <ul>
-            <li id="showMessageAfterClickLi" onclick="showMessageAfterClickMe()">show</li>
-            <li id="hiddenMessageAfterClickLi" onclick="hiddenMessageAfterClickMe()">hidden</li>
-        </ul>
-    </div>
-    <div><p id="message" hidden="hidden">I'm the message</p></div>
 </div>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
+    </div>
+</footer>
 </body>
 <script type="text/javascript">
     window.onload = function () {
@@ -91,6 +136,9 @@
         }
         return txt.toString();
     }
+
+
+
 
 </script>
 </html>

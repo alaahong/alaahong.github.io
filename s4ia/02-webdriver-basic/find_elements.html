@@ -3,6 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Find Elements</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+
+
+
+    </script>
     <!--    通过伪类为文本提供可视化的图标-->
     <style>
 .potato:before {
@@ -25,31 +55,47 @@ content: "🍌";
 }
 
 
+
+
+
     </style>
 </head>
 <body>
-<div id="main">
-    <div name="item">
-        <!--        定义包含三种蔬菜的无序列表-->
-        <ul id="vegetable">
-            <li class="vegetable potato">potato</li>
-            <li class="vegetable eggplant">eggplant</li>
-            <li class="vegetable pepper">pepper</li>
-        </ul>
-    </div>
-    <div name="item">
-        <!--        定义包括三种水果的有序列表-->
-        <ol id="fruit">
-            <li class="fruit apple">apple</li>
-            <li class="fruit pear">pear</li>
-            <li class="fruit banana">banana</li>
-        </ol>
-    </div>
-    <!--    定义一个input元素,用于焦点定位-->
-    <div name="item">
-        <label for="activeElement">ActiveElement:</label>
-        <input id="activeElement" type="text"/>
+<div id="container">
+    <div id="main">
+        <div name="item">
+            <!--        定义包含三种蔬菜的无序列表-->
+            <ul id="vegetable">
+                <li class="vegetable potato">potato</li>
+                <li class="vegetable eggplant">eggplant</li>
+                <li class="vegetable pepper">pepper</li>
+            </ul>
+        </div>
+        <div name="item">
+            <!--        定义包括三种水果的有序列表-->
+            <ol id="fruit">
+                <li class="fruit apple">apple</li>
+                <li class="fruit pear">pear</li>
+                <li class="fruit banana">banana</li>
+            </ol>
+        </div>
+        <!--    定义一个input元素,用于焦点定位-->
+        <div name="item">
+            <label for="activeElement">ActiveElement:</label>
+            <input id="activeElement" type="text"/>
+        </div>
     </div>
 </div>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
+    </div>
+</footer>
 </body>
 </html>

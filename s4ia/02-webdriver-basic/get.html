@@ -1,9 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://www.ianzhang.cn/s4ia/02-webdriver-basic/get2.html" />
+    <meta http-equiv="refresh" content="0; url=https://www.ianzhang.cn/s4ia/02-webdriver-basic/get2.html"/>
     <title>Open</title>
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+
+
+
+    </script>
 </head>
 </html>

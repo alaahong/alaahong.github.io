@@ -1,285 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>get element information</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+
+
+    </script>
 </head>
 <body>
-<div>
+<div id="container">
     <div>
-        <div><h2>getTagName</h2></div>
-        <div name="get-tag-name">tag1</div>
-        <i-am-a-tag name="get-tag-name">tag2</i-am-a-tag>
-    </div>
-    <div>
-        <div><h2>getAccessibleName</h2></div>
         <div>
-            <!--        期望可以获取AccessibleName为label的值-->
-            <label for="get-accessible-name-1">from label</label>
-            <input type="text" id="get-accessible-name-1">
+            <div><h2>getTagName</h2></div>
+            <div name="get-tag-name">tag1</div>
+            <i-am-a-tag name="get-tag-name">tag2</i-am-a-tag>
         </div>
         <div>
-            <!--        期望可以获取AccessibleName为title的值-->
-            <input type="text" id="get-accessible-name-2" title="from title">
+            <div><h2>getAccessibleName</h2></div>
+            <div>
+                <!--        期望可以获取AccessibleName为label的值-->
+                <label for="get-accessible-name-1">from label</label>
+                <input type="text" id="get-accessible-name-1">
+            </div>
+            <div>
+                <!--        期望可以获取AccessibleName为title的值-->
+                <input type="text" id="get-accessible-name-2" title="from title">
+            </div>
+            <div>
+                <!--        期望可以获取AccessibleName为placeholder的值-->
+                <input type="text" id="get-accessible-name-3" placeholder="from placeholder">
+            </div>
+            <div>
+                <!--        期望可以获取AccessibleName为aria-placeholder的值-->
+                <input type="text" id="get-accessible-name-4" aria-placeholder="from aria-placeholder">
+            </div>
+            <div>
+                <!--        期望可以获取AccessibleName为aria-label的值-->
+                <input type="text" id="get-accessible-name-5" aria-label="from aria-label">
+            </div>
+            <div>
+                <!--        当同时具备多个匹配AccessibleName的条件时，期望获取aria-label的值-->
+                <label for="get-accessible-name-6">from label</label>
+                <input type="text" id="get-accessible-name-6"
+                       title="from title"
+                       placeholder="from placeholder"
+                       aria-placeholder="from aria-placeholder"
+                       aria-label="from aria-label">
+            </div>
         </div>
-        <div>
-            <!--        期望可以获取AccessibleName为placeholder的值-->
-            <input type="text" id="get-accessible-name-3" placeholder="from placeholder">
-        </div>
-        <div>
-            <!--        期望可以获取AccessibleName为aria-placeholder的值-->
-            <input type="text" id="get-accessible-name-4" aria-placeholder="from aria-placeholder">
-        </div>
-        <div>
-            <!--        期望可以获取AccessibleName为aria-label的值-->
-            <input type="text" id="get-accessible-name-5" aria-label="from aria-label">
-        </div>
-        <div>
-            <!--        当同时具备多个匹配AccessibleName的条件时，期望获取aria-label的值-->
-            <label for="get-accessible-name-6">from label</label>
-            <input type="text" id="get-accessible-name-6"
-                   title="from title"
-                   placeholder="from placeholder"
-                   aria-placeholder="from aria-placeholder"
-                   aria-label="from aria-label">
-        </div>
-    </div>
-    <div>
-        <!--        期望获取页面元素的文本-->
-        <div><h2>getText</h2></div>
-        <div id="get-text-1">text1</div>
-        <div id="get-text-2">text<span>2</span></div>
-        <div><input id="get-text-3" value="test3"></div>
-        <div><label for="get-text-4">text4</label><input id="get-text-4" value="text4"/></div>
-        <div>
-            <select id="get-text-5">
-                <option value="option1">option1</option>
-                <option value="option2" selected>option2</option>
-            </select>
-            <select id="get-text-6"/>
-            <select id="get-text-7"></select>
-        </div>
-        <div id="get-text-8">
-            <!--            input为自闭合标签，此处的</input>其实是无效的，实际浏览器渲染的时候会将其省略-->
-            <input type="radio" name="get-text-radio" value="value1">radio1</input>
-            <!--            此处因为没有换行符，所以Selenium会自行增加空格-->
-            <input type="radio" name="get-text-radio" value="value1">radio2
-            <!--            此处有换行符，所以Selenium不会自行增加空格-->
-            <input type="radio" name="get-text-radio" value="value2"><br>radio3<br>
-            <!--            此处有换行符，所以Selenium不会自行增加空格，结尾处的换行标签会被自动忽略-->
-            <input type="radio" name="get-text-radio" value="value3">radio4<br>
-        </div>
-        <div id="get-text-9">
-            <!--            checkbox采用与上述radio相同的input标签，所以getText的逻辑一致-->
-            <input type="checkbox" name="get-text-checkbox" value="value1">checkbox1</input>
-            <input type="checkbox" name="get-text-checkbox" value="value2">checkbox2
-            <input type="checkbox" name="get-text-checkbox" value="value3"><br>checkbox3 <br>
-            <input type="checkbox" name="get-text-checkbox" value="value4">checkbox4
-        </div>
-        <div>
-            <!--            button标签定义的按钮，可以获得text-->
-            <button id="get-text-10" value="value1">button1</button>
-            <!--            input标签定义的按钮，无法获得text-->
-            <input id="get-text-11" type="button" value="button2">
-        </div>
-    </div>
-    <div>
-        <!--        期望获取页面元素的attribute属性-->
-        <h2>getDomAttribute</h2>
-        <div><p id="dom-attribute" aria-valuetext="getDomAttribute">getDomAttribute</p></div>
-    </div>
 
-    <div>
-        <!--        期望获取页面元素的property属性-->
-        <h2>getDomProperty</h2>
-        <div><input readonly="readonly" type="text" id="dom-property-1" required/></div>
-        <div><input checked type="checkbox" id="dom-property-2"/></div>
-        <div><p id="dom-property-3">getDomProperty</p></div>
-    </div>
 
-    <div>
-        <!--        期望获取页面元素的属性-->
-        <h2>getAttribute</h2>
-        <!--        布尔属性的值应该返回"true"或null，即使设置了其他的值-->
-        <div><input id="get-attribute-1" readonly="readonly" type="text"></div>
-        <!--        布尔属性的值应该返回"true"或null，即使未设置值，但是为声明的属性值为null-->
-        <div><input id="get-attribute-2" checked type="checkbox"></div>
-        <!--        由多个className组合而成的class属性将返回完整的值，并不涉及到拆分-->
-        <div><p id="get-attribute-3" class="test attribute">class attribute</p></div>
-        <!--        属性会尝试返回最新的值，defaultValue属性会返回默认的值-->
-        <div><input id="get-attribute-4" value="default value"></div>
-    </div>
-    <div>
-        <!--        期望获取Dom元素的Attribute-->
-        <h2>getDomAttribute</h2>
-        <!--        不存在名为readonly的DomProperty，对应的名为readOnly-->
-        <div><input id="get-dom-attribute-1" readonly="readonly" type="text"></div>
-        <!--        布尔属性的值应该返回"true"或null，即使未设置值，但是为声明的属性值为null-->
-        <div><input id="get-dom-attribute-2" checked type="checkbox"></div>
-        <!--        由多个className组合而成的class属性将返回完整的值，并不涉及到拆分-->
-        <div><p id="get-dom-attribute-3" class="test dom attribute">class dom attribute</p></div>
-        <!--        针对getDomAttribute方法，value返回的是默认值-->
-        <div><input id="get-dom-attribute-4" value="default value"></div>
-    </div>
-    <div>
-        <!--        期望获取Dom元素的Property-->
-        <h2>getDomProperty</h2>
-        <!--        布尔属性的值应该返回"true"或null，即使设置了其他的值-->
-        <div><input id="get-dom-property-1" readonly="readonly" type="text"></div>
-        <!--        与attribute不同，property方式required属性会有默认的值"false"-->
-        <div><input id="get-dom-property-2" checked type="checkbox"></div>
-        <!--        与attribute不同，property方式没有class属性，对应的名为"className"-->
-        <div><p id="get-dom-property-3" class="test dom property">test dom property</p></div>
-        <!--        属性会尝试返回最新的值，defaultValue属性会返回默认的值-->
-        <div><input id="get-dom-property-4" value="default value"></div>
-    </div>
-    <div>
-        <!--        期望获取WAI-ARIA Role-->
-        <h2>getAriaRole</h2>
-        <!--        若将元素的role指定为特定范围内的值，则返回指定值-->
         <div>
-            <p id="get-aria-role-1" role="alert">alert role</p>
-        </div>
-        <!--        若指定customized-role为p的role，则返回默认值"paragraph"-->
-        <div>
-            <p id="get-aria-role-2" role="customized-role">paragraph role</p>
-        </div>
-        <!--        部分元素在一定条件下拥有默认的role，例如指定了href值的a标签的role为link-->
-        <div>
-            <a href="#" id="get-aria-role-3">link role</a>
-        </div>
-        <!--        未指定href值的a标签的role为generic-->
-        <div>
-            <a id="get-aria-role-4">generic role</a>
-        </div>
-    </div>
-    <div>
-        <!--        期望获取CSS属性值-->
-        <h2>getCssValue</h2>
-        <!--      定义一个div，宽度采用计算属性，与整体的宽度绑定，高度采用固定值-->
-        <div>
-            <div id="get-css-value-1" style="width: calc(80% - 10px);height: 20px;background-color: blue;"></div>
-        </div>
-    </div>
-    <div>
-        <!--        期望获取Location-->
-        <h2>getLocation</h2>
-        <!--      定义一个块级元素方便确认位置-->
-        <div>
-            <p id="get-location-1">get-location-1</p>
-        </div>
-    </div>
-    <div>
-        <!--        期望获取Rectangle-->
-        <h2>getRect</h2>
-        <!--      定义一个块级元素方便确认位置-->
-        <div>
-            <p id="get-rect-1">get-rect-1</p>
-        </div>
-    </div>
-    <div>
-        <!--        期望获取Size-->
-        <h2>getSize</h2>
-        <!--      定义一个块级元素方便确认位置-->
-        <div>
-            <p id="get-size-1">get-size-1</p>
-        </div>
-    </div>
-    <div>
-        <!--        期望获取ShadowRoot-->
-        <h2>getShadowRoot</h2>
-        <!--      定义待挂载的元素-->
-        <div>
-            <div id="get-shadow-root-1"></div>
-        </div>
-        <div>
-            <div id="get-shadow-root-2"></div>
-        </div>
-    </div>
-    <div>
-        <!--        判断是否显示-->
-        <h2>isDisplayed</h2>
-        <!--      定义待挂载的元素-->
-        <div>
-            <div id="is-displayed-1" style="width: 200px; height: 20px; background-color: blue;">is-displayed-1</div>
-        </div>
-        <div>
-            <div id="is-displayed-2" hidden style="width: 200px; height: 20px; background-color: blue;">is-displayed-2
+            <!--        期望获取WAI-ARIA Role-->
+            <h2>getAriaRole</h2>
+            <!--        若将元素的role指定为特定范围内的值，则返回指定值-->
+            <div>
+                <p id="get-aria-role-1" role="alert">alert role</p>
+            </div>
+            <!--        若指定customized-role为p的role，则返回默认值"paragraph"-->
+            <div>
+                <p id="get-aria-role-2" role="customized-role">paragraph role</p>
+            </div>
+            <!--        部分元素在一定条件下拥有默认的role，例如指定了href值的a标签的role为link-->
+            <div>
+                <a href="#" id="get-aria-role-3">link role</a>
+            </div>
+            <!--        未指定href值的a标签的role为generic-->
+            <div>
+                <a id="get-aria-role-4">generic role</a>
             </div>
         </div>
-        <div hidden>
-            <div id="is-displayed-3" style="width: 200px; height: 20px; background-color: blue;">is-displayed-3</div>
-        </div>
+
         <div>
-            <div id="is-displayed-4" style="visibility: hidden; width: 200px; height: 20px; background-color: blue;">
-                is-displayed-4
+            <!--        期望获取Size-->
+            <h2>getSize</h2>
+            <!--      定义一个块级元素方便确认位置-->
+            <div>
+                <p id="get-size-1">get-size-1</p>
             </div>
         </div>
         <div>
-            <div id="is-displayed-5" style="display: none; width: 200px; height: 20px; background-color: blue;">
-                is-displayed-5
+            <!--        期望获取Location-->
+            <h2>getLocation</h2>
+            <!--      定义一个块级元素方便确认位置-->
+            <div>
+                <p id="get-location-1">get-location-1</p>
+            </div>
+        </div>
+        <div>
+            <!--        期望获取Rectangle-->
+            <h2>getRect</h2>
+            <!--      定义一个块级元素方便确认位置-->
+            <div>
+                <p id="get-rect-1">get-rect-1</p>
+            </div>
+        </div>
+
+        <div>
+            <!--        期望获取CSS属性值-->
+            <h2>getCssValue</h2>
+            <!--      定义一个div，宽度采用计算属性，与整体的宽度绑定，高度采用固定值-->
+            <div>
+                <div id="get-css-value-1" style="width: calc(80% - 10px);height: 20px;background-color: blue;"></div>
+            </div>
+        </div>
+
+
+        <div>
+            <!--        期望获取ShadowRoot-->
+            <h2>getShadowRoot</h2>
+            <!--      定义待挂载的元素-->
+            <div>
+                <div id="get-shadow-root-1"></div>
+            </div>
+            <div>
+                <div id="get-shadow-root-2"></div>
+            </div>
+        </div>
+
+
+        <div>
+            <!--        期望获取页面元素的文本-->
+            <div><h2>getText</h2></div>
+            <div id="get-text-1">text1</div>
+            <div id="get-text-2">text<span>2</span></div>
+            <div><input id="get-text-3" value="test3"></div>
+            <div><label for="get-text-4">text4</label><input id="get-text-4" value="text4"/></div>
+            <div>
+                <select id="get-text-5">
+                    <option value="option1">option1</option>
+                    <option value="option2" selected>option2</option>
+                </select>
+                <select id="get-text-6"/>
+                <select id="get-text-7"></select>
+            </div>
+            <div id="get-text-8">
+                <!--            input为自闭合标签，此处的</input>其实是无效的，实际浏览器渲染的时候会将其省略-->
+                <input type="radio" name="get-text-radio" value="value1">radio1</input>
+                <!--            此处因为没有换行符，所以Selenium会自行增加空格-->
+                <input type="radio" name="get-text-radio" value="value1">radio2
+                <!--            此处有换行符，所以Selenium不会自行增加空格-->
+                <input type="radio" name="get-text-radio" value="value2"><br>radio3<br>
+                <!--            此处有换行符，所以Selenium不会自行增加空格，结尾处的换行标签会被自动忽略-->
+                <input type="radio" name="get-text-radio" value="value3">radio4<br>
+            </div>
+            <div id="get-text-9">
+                <!--            checkbox采用与上述radio相同的input标签，所以getText的逻辑一致-->
+                <input type="checkbox" name="get-text-checkbox" value="value1">checkbox1</input>
+                <input type="checkbox" name="get-text-checkbox" value="value2">checkbox2
+                <input type="checkbox" name="get-text-checkbox" value="value3"><br>checkbox3 <br>
+                <input type="checkbox" name="get-text-checkbox" value="value4">checkbox4
+            </div>
+            <div>
+                <!--            button标签定义的按钮，可以获得text-->
+                <button id="get-text-10" value="value1">button1</button>
+                <!--            input标签定义的按钮，无法获得text-->
+                <input id="get-text-11" type="button" value="button2">
+            </div>
+        </div>
+
+        <div>
+            <!--        期望获取Dom元素的Attribute-->
+            <h2>getDomAttribute</h2>
+            <!--        不存在名为readonly的DomProperty，对应的名为readOnly-->
+            <div><input id="get-dom-attribute-1" readonly="readonly" type="text"></div>
+            <!--        布尔属性的值应该返回"true"或null，即使未设置值，但是为声明的属性值为null-->
+            <div><input id="get-dom-attribute-2" checked type="checkbox"></div>
+            <!--        由多个className组合而成的class属性将返回完整的值，并不涉及到拆分-->
+            <div><p id="get-dom-attribute-3" class="test dom attribute">class dom attribute</p></div>
+            <!--        针对getDomAttribute方法，value返回的是默认值-->
+            <div><input id="get-dom-attribute-4" value="default value"></div>
+        </div>
+        <div>
+            <!--        期望获取Dom元素的Property-->
+            <h2>getDomProperty</h2>
+            <!--        布尔属性的值应该返回"true"或null，即使设置了其他的值-->
+            <div><input id="get-dom-property-1" readonly="readonly" type="text"></div>
+            <!--        与attribute不同，property方式required属性会有默认的值"false"-->
+            <div><input id="get-dom-property-2" checked type="checkbox"></div>
+            <!--        与attribute不同，property方式没有class属性，对应的名为"className"-->
+            <div><p id="get-dom-property-3" class="test dom property">test dom property</p></div>
+            <!--        属性会尝试返回最新的值，defaultValue属性会返回默认的值-->
+            <div><input id="get-dom-property-4" value="default value"></div>
+        </div>
+
+        <div>
+            <!--        期望获取页面元素的属性-->
+            <h2>getAttribute</h2>
+            <!--        布尔属性的值应该返回"true"或null，即使设置了其他的值-->
+            <div><input id="get-attribute-1" readonly="readonly" type="text"></div>
+            <!--        布尔属性的值应该返回"true"或null，即使未设置值，但是为声明的属性值为null-->
+            <div><input id="get-attribute-2" checked type="checkbox"></div>
+            <!--        由多个className组合而成的class属性将返回完整的值，并不涉及到拆分-->
+            <div><p id="get-attribute-3" class="test attribute">class attribute</p></div>
+            <!--        属性会尝试返回最新的值，defaultValue属性会返回默认的值-->
+            <div><input id="get-attribute-4" value="default value"></div>
+        </div>
+        <div>
+            <!--        判断是否显示-->
+            <h2>isDisplayed</h2>
+            <!--      定义待挂载的元素-->
+            <div>
+                <div id="is-displayed-1" style="width: 200px; height: 20px; background-color: blue;">is-displayed-1
+                </div>
+            </div>
+            <div>
+                <div id="is-displayed-2" hidden style="width: 200px; height: 20px; background-color: blue;">
+                    is-displayed-2
+                </div>
+            </div>
+            <div hidden>
+                <div id="is-displayed-3" style="width: 200px; height: 20px; background-color: blue;">is-displayed-3
+                </div>
+            </div>
+            <div>
+                <div id="is-displayed-4"
+                     style="visibility: hidden; width: 200px; height: 20px; background-color: blue;">
+                    is-displayed-4
+                </div>
+            </div>
+            <div>
+                <div id="is-displayed-5" style="display: none; width: 200px; height: 20px; background-color: blue;">
+                    is-displayed-5
+                </div>
+            </div>
+        </div>
+        <div>
+            <!--        判断元素是否可编辑-->
+            <h2>isEnabled</h2>
+            <!--      定义普通的input-->
+            <div>
+                <input id="is-enabled-1" value="is-enabled-1">
+            </div>
+            <!--      定义disabled的input-->
+            <div>
+                <input id="is-enabled-2" disabled value="is-enabled-2">
+            </div>
+            <!--      定义disabled的select-->
+            <div>
+                <select id="is-enabled-3" disabled>
+                    <option>is-enabled-3</option>
+                </select>
+            </div>
+            <!--      定义disabled的textarea-->
+            <div>
+                <textarea id="is-enabled-4" disabled>is-enabled-4</textarea>
+            </div>
+            <!--      定义disabled的p-->
+            <div>
+                <p id="is-enabled-5" disabled>is-enabled-5</p>
+            </div>
+        </div>
+        <div>
+            <!--        判断元素是否被选择-->
+            <h2>isSelected</h2>
+            <!--      定义待挂载的元素-->
+            <div>
+                <input id="is-selected-1" type="checkbox" value="is-selected-1">
+                <input id="is-selected-2" checked type="checkbox" value="is-selected-2">
+            </div>
+            <div>
+                <select id="is-selected-3" title="is-selected-3">
+                    <option>is-selected-3-1</option>
+                    <option selected>is-selected-3-2</option>
+                </select>
+            </div>
+            <div>
+                <select id="is-selected-4" multiple title="is-selected-4">
+                    <option>is-selected-4-1</option>
+                    <option selected>is-selected-4-2</option>
+                    <option selected>is-selected-4-3</option>
+                </select>
+            </div>
+            <div>
+                <input type="radio" id="is-selected-5"> is-selected-5
+                <input type="radio" checked id="is-selected-6"> is-selected-6
+            </div>
+            <div>
+                <p checked id="is-selected-7">is-selected-7</p>
+            </div>
+            <div>
+                <option checked id="is-selected-8">is-selected-8</option>
             </div>
         </div>
     </div>
-    <div>
-        <!--        判断元素是否可编辑-->
-        <h2>isEnabled</h2>
-        <!--      定义普通的input-->
-        <div>
-            <input id="is-enabled-1" value="is-enabled-1">
+    <footer class="footer">
+        <hr>
+        <div class="footer-container">
+            <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+                | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+                | <a href="mailto:hi@ianzhang.cn">Mail</a>
+            </p>
+            <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+            </p>
         </div>
-        <!--      定义disabled的input-->
-        <div>
-            <input id="is-enabled-2" disabled value="is-enabled-2">
-        </div>
-        <!--      定义disabled的select-->
-        <div>
-            <select id="is-enabled-3" disabled>
-                <option>is-enabled-3</option>
-            </select>
-        </div>
-        <!--      定义disabled的textarea-->
-        <div>
-            <textarea id="is-enabled-4" disabled>is-enabled-4</textarea>
-        </div>
-        <!--      定义disabled的p-->
-        <div>
-            <p id="is-enabled-5" disabled>is-enabled-5</p>
-        </div>
-    </div>
-    <div>
-        <!--        判断元素是否被选择-->
-        <h2>isSelected</h2>
-        <!--      定义待挂载的元素-->
-        <div>
-            <input id="is-selected-1" type="checkbox" value="is-selected-1">
-            <input id="is-selected-2" checked type="checkbox" value="is-selected-2">
-        </div>
-        <div>
-            <select id="is-selected-3" title="is-selected-3">
-                <option>is-selected-3-1</option>
-                <option selected>is-selected-3-2</option>
-            </select>
-        </div>
-        <div>
-            <select id="is-selected-4" multiple title="is-selected-4">
-                <option>is-selected-4-1</option>
-                <option selected>is-selected-4-2</option>
-                <option selected>is-selected-4-3</option>
-            </select>
-        </div>
-        <div>
-            <input type="radio" id="is-selected-5"> is-selected-5
-            <input type="radio" checked id="is-selected-6"> is-selected-6
-        </div>
-        <div>
-            <p checked id="is-selected-7">is-selected-7</p>
-        </div>
-        <div>
-            <option checked id="is-selected-8">is-selected-8</option>
-        </div>
-    </div>
-</div>
+    </footer>
+
+</body>
 <script>
  let shadowRoot1 = document.getElementById('get-shadow-root-1').attachShadow({mode: 'open'});
   shadowRoot1.innerHTML = `
@@ -292,6 +332,6 @@
             `;
 
 
+
 </script>
-</body>
 </html>

@@ -3,74 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <title>AbsoluteLocators</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+
+
+
+    </script>
 </head>
 <body>
-<main>
-    <div>
-        <!--        定义两个id不同的标签-->
-        <div><h1>id</h1></div>
-        <div><p id="locator11">locator1_1</p></div>
-        <div><p id="locator12">locator1_2</p></div>
-    </div>
-    <hr>
-    <div>
-        <!--        定义两个a标签-->
-        <div><h1>linkText</h1></div>
-        <!--        页面锚点，标签声明时文本前后包含空格-->
-        <div><a href="#"> locator2_1 </a></div>
-        <!--        mailto链接锚点-->
-        <div><a href="mailto:locator2_2@no-reply.com">locator2_2</a></div>
-    </div>
-    <hr>
-    <div>
-        <!--        定义两个a标签-->
-        <div><h1>partialLinkText</h1></div>
-        <div><a href="#">locator3_1</a></div>
-        <div><a href="#">locator3_2</a></div>
-    </div>
-    <hr>
-    <div>
-        <!--        定义两个相同name的标签-->
-        <div><h1>name</h1></div>
-        <div><p name="locator4">locator4_1</p></div>
-        <div><p name="locator4">locator4_2</p></div>
-    </div>
-    <hr>
-    <div>
-        <!--        定义两个大小写不同的同名标签-->
-        <div><h1>tagName</h1></div>
+<div id="container">
+    <main>
         <div>
-            <p>
-                <locator5>locator5_1</locator5>
-            </p>
+            <!--        定义两个id不同的标签-->
+            <div><h1>id</h1></div>
+            <div><p id="locator11">locator1_1</p></div>
+            <div><p id="locator12">locator1_2</p></div>
         </div>
+        <hr>
         <div>
-            <p>
-                <LOCATOR5>locator5_2</LOCATOR5>
-            </p>
+            <!--        定义两个a标签-->
+            <div><h1>linkText</h1></div>
+            <!--        页面锚点，标签声明时文本前后包含空格-->
+            <div><a href="#"> locator2_1 </a></div>
+            <!--        mailto链接锚点-->
+            <div><a href="mailto:locator2_2@no-reply.com">locator2_2</a></div>
         </div>
-    </div>
+        <hr>
+        <div>
+            <!--        定义两个a标签-->
+            <div><h1>partialLinkText</h1></div>
+            <div><a href="#">locator3_1</a></div>
+            <div><a href="#">locator3_2</a></div>
+        </div>
+        <hr>
+        <div>
+            <!--        定义两个相同name的标签-->
+            <div><h1>name</h1></div>
+            <div><p name="locator4">locator4_1</p></div>
+            <div><p name="locator4">locator4_2</p></div>
+        </div>
+        <hr>
+        <div>
+            <!--        定义两个大小写不同的同名标签-->
+            <div><h1>tagName</h1></div>
+            <div>
+                <p>
+                    <locator5>locator5_1</locator5>
+                </p>
+            </div>
+            <div>
+                <p>
+                    <LOCATOR5>locator5_2</LOCATOR5>
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div>
+            <!--        定义两个不同的标签-->
+            <div><h1>xpath</h1></div>
+            <div><p id="locator61"> locator6_1</p></div>
+            <div><p name="locator62"> locator6_2 </p></div>
+        </div>
+        <hr>
+        <div>
+            <!--        定义两个标签，ClassName互有异同-->
+            <div><h1>className</h1></div>
+            <div><p class="locator7 locator71"> locator7_1</p></div>
+            <div><p class="locator7 locator72"> locator7_2</p></div>
+        </div>
+        <hr>
+        <div>
+            <!--        定义两个不同的标签-->
+            <div><h1>cssSelector</h1></div>
+            <div><p id="locator81"> locator8_1</p></div>
+            <div><p name="locator82"> locator8_2</p></div>
+        </div>
+    </main>
+</div>
+<footer class="footer">
     <hr>
-    <div>
-        <!--        定义两个不同的标签-->
-        <div><h1>xpath</h1></div>
-        <div><p id="locator61"> locator6_1</p></div>
-        <div><p name="locator62"> locator6_2 </p></div>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
     </div>
-    <hr>
-    <div>
-        <!--        定义两个标签，ClassName互有异同-->
-        <div><h1>className</h1></div>
-        <div><p class="locator7 locator71"> locator7_1</p></div>
-        <div><p class="locator7 locator72"> locator7_2</p></div>
-    </div>
-    <hr>
-    <div>
-        <!--        定义两个不同的标签-->
-        <div><h1>cssSelector</h1></div>
-        <div><p id="locator81"> locator8_1</p></div>
-        <div><p name="locator82"> locator8_2</p></div>
-    </div>
-</main>
+</footer>
 </body>
 </html>

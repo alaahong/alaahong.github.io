@@ -2,11 +2,42 @@
 <html>
 <head>
     <title>Dynamic Element</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+
+
+
+    </script>
 </head>
 <body>
-<div id="app">
+<div id="container">
+    <div id="app">
         <v-container>
             <!--            指定id的input-->
             <v-text-field id="customizedId" v-model="dynamicElement" :counter="10"
@@ -14,7 +45,19 @@
             <!--            未指定id的input，由框架自动分配随机id-->
             <v-text-field v-model="dynamicElement" :counter="10" label="Dynamic Element"></v-text-field>
         </v-container>
+    </div>
 </div>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
+    </div>
+</footer>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
 <script>
@@ -22,6 +65,9 @@
       el: '#app',
       vuetify: new Vuetify(),
     })
+
+
+
 </script>
 </body>
 </html>

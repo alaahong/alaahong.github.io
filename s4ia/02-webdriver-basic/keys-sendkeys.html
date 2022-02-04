@@ -1,38 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keys</title>
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+
+
+
+    </script>
 </head>
 <body>
-<div>
-    <div><h1>SendKeys</h1></div>
+<div id="container">
     <div>
-        <input id="sendKeys" placeholder="sendKeys"/>
+        <div><h1>SendKeys</h1></div>
+        <div>
+            <input id="sendKeys" placeholder="sendKeys"/>
+        </div>
+    </div>
+    <div>
+        <div><h1>SendKeys with Enter</h1></div>
+        <div>
+            <textarea id="sendKeysWithEnter" placeholder="sendKeysWithEnter"></textarea>
+        </div>
+    </div>
+    <div>
+        <div><h1>SendKeys to Copy</h1></div>
+        <div>
+            <input id="username" placeholder="username"/>
+            <input id="copy" type="button" value="login"
+                   onclick="document.querySelector('#afterLogon').textContent=document.querySelector('#username').value">
+        </div>
+        <div><p id="afterLogon"></p></div>
+    </div>
+    <div>
+        <div><h1>SendKeys with Tab</h1></div>
+        <div>
+            <button id="btn1">first button</button>
+            <button id="btn2">second button</button>
+            </button>
+        </div>
     </div>
 </div>
-<div>
-    <div><h1>SendKeys with Enter</h1></div>
-    <div>
-        <textarea id="sendKeysWithEnter" placeholder="sendKeysWithEnter"></textarea>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
     </div>
-</div>
-<div>
-    <div><h1>SendKeys to Copy</h1></div>
-    <div>
-        <input id="username" placeholder="username"/>
-        <input id="copy" type="button" value="login"
-               onclick="document.querySelector('#afterLogon').textContent=document.querySelector('#username').value">
-    </div>
-    <div><p id="afterLogon"></p></div>
-</div>
-<div>
-    <div><h1>SendKeys with Tab</h1></div>
-    <div>
-        <button id="btn1">first button</button>
-        <button id="btn2">second button</button>
-        </button>
-    </div>
-</div>
+</footer>
 </body>
 </html>

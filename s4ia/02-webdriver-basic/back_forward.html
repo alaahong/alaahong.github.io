@@ -3,20 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>Back and Forward</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+
+
+
+    </script>
 </head>
 <body>
-<div>
+<div id="container">
     <div>
-<!--        三个链接，点击后分别定位于后面id为对应值的h1元素-->
-        <a id="firstLink" href="#first">#first</a>
-        <a id="secondLink" href="#second">#second</a>
-        <a id="thirdLink" href="#third">#third</a>
-    </div>
-    <div>
-        <h1 id="first">first</h1>
-        <h1 id="second">second</h1>
-        <h1 id="third">third</h1>
+        <div>
+            <!--        三个链接，点击后分别定位于后面id为对应值的h1元素-->
+            <a id="firstLink" href="#first">#first</a>
+            <a id="secondLink" href="#second">#second</a>
+            <a id="thirdLink" href="#third">#third</a>
+        </div>
+        <div>
+            <h1 id="first">first</h1>
+            <h1 id="second">second</h1>
+            <h1 id="third">third</h1>
+        </div>
     </div>
 </div>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
+    </div>
+</footer>
 </body>
 </html>

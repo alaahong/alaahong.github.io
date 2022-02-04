@@ -1,27 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Up and Down</title>
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+
+
+
+    </script>
 </head>
 <body>
-<div>
-    <div><h1>KeyDown</h1></div>
+<div id="container">
     <div>
-        <input id="keyDown" placeholder="keyDown"/>
+        <div><h1>KeyDown</h1></div>
+        <div>
+            <input id="keyDown" placeholder="keyDown"/>
+        </div>
+    </div>
+    <div>
+        <div><h1>KeyUp</h1></div>
+        <div>
+            <input id="keyUp" placeholder="keyUp"/>
+        </div>
+    </div>
+    <div>
+        <div><h1>Clear</h1></div>
+        <div>
+            <input id="clear" placeholder="clear"/>
+        </div>
     </div>
 </div>
-<div>
-    <div><h1>KeyUp</h1></div>
-    <div>
-        <input id="keyUp" placeholder="keyUp"/>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
     </div>
-</div>
-<div>
-    <div><h1>Clear</h1></div>
-    <div>
-        <input id="clear" placeholder="clear"/>
-    </div>
-</div>
+</footer>
 </body>
 </html>
