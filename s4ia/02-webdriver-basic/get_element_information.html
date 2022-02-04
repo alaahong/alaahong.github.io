@@ -21,11 +21,15 @@
 }
 
 
+
+
     </style>
     <script>
 window.onload=function(){
 document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
 }
+
+
 
 
     </script>
@@ -193,6 +197,10 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
             <div><p id="get-dom-attribute-3" class="test dom attribute">class dom attribute</p></div>
             <!--        针对getDomAttribute方法，value返回的是默认值-->
             <div><input id="get-dom-attribute-4" value="default value"></div>
+            <!--        针对自定义的属性，期望返回标签内定义的值-->
+            <div><input id="get-dom-attribute-5" data-test-dom-attribute="data-test-dom-attribute"></div>
+            <!--        对于href属性，期望返回标签内定义的值-->
+            <div><a id="get-dom-attribute-6" href="#">get-dom-attribute-6</a></div>
         </div>
         <div>
             <!--        期望获取Dom元素的Property-->
@@ -205,6 +213,8 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
             <div><p id="get-dom-property-3" class="test dom property">test dom property</p></div>
             <!--        属性会尝试返回最新的值，defaultValue属性会返回默认的值-->
             <div><input id="get-dom-property-4" value="default value"></div>
+            <!--        对于href属性，期望返回解析后完整的值-->
+            <div><a id="get-dom-property-5" href="#">get-dom-property-5</a></div>
         </div>
 
         <div>
@@ -218,6 +228,8 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
             <div><p id="get-attribute-3" class="test attribute">class attribute</p></div>
             <!--        属性会尝试返回最新的值，defaultValue属性会返回默认的值-->
             <div><input id="get-attribute-4" value="default value"></div>
+            <!--        对于href属性，期望返回解析后完整的值-->
+            <div><a id="get-attribute-5" href="#">get-attribute-5</a></div>
         </div>
         <div>
             <!--        判断是否显示-->
@@ -330,6 +342,8 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
   shadowRoot2.innerHTML = `
               <span id="shadow-content-1">shadow-content-1</span>
             `;
+
+
 
 
 
