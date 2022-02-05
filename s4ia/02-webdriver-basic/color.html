@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color</title>
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+table.color-table td {text-align:center }
+table.color-table td.cell { text-transform:uppercase }
+table.color-table td.bg { border:1px solid black }
+table.color-table th {text-align:center; background:black; color:white }
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+    </script>
+</head>
+<body>
+<div id="container">
+    <div id="basic-color-table">
+        <table class="color-table">
+            <caption>Sample Colors</caption>
+            <tbody>
+            <tr>
+                <th>Named</th>
+                <th>Numeric</th>
+                <th>HSL</th>
+                <th>HSLA</th>
+                <th>Color Name</th>
+                <th>HSL Value</th>
+                <th>HSLA Value</th>
+                <th>Hex RGB</th>
+                <th>Decimal</th>
+            </tr>
+            <tr>
+                <td class="cell bg" style="background:black"></td>
+                <td class="cell bg" style="background:#000000"></td>
+                <td class="cell bg" style="background:hsl(0, 0%, 0%)"></td>
+                <td class="cell bg" style="background:hsla(0, 0%, 0%, 1)"></td>
+                <td><dfn id="black">black</dfn></td>
+                <td class="cell" style="background:silver">0,0%,0%</td>
+                <td class="cell" style="background:silver">0,0%,0%,1</td>
+                <td class="cell" style="background:silver">#000000</td>
+                <td class="cell" style="background:silver">0,0,0</td>
+            </tr>
+            <tr>
+                <td class="cell bg" style="background:red"></td>
+                <td class="cell bg" style="background:#FF0000"></td>
+                <td class="cell bg" style="background:hsl(0, 100%, 50%)"></td>
+                <td class="cell bg" style="background:hsla(0, 100%, 50%, 1)"></td>
+                <td><dfn id="red">red</dfn></td>
+                <td class="cell" style="background:silver">0,100%,50%</td>
+                <td class="cell" style="background:silver">0,100%,50%,1</td>
+                <td class="cell" style="background:silver">#FF0000</td>
+                <td class="cell" style="background:silver">255,0,0</td>
+            </tr>
+            <tr>
+                <td class="cell bg" style="background:white"></td>
+                <td class="cell bg" style="background:#FFFFFF"></td>
+                <td class="cell bg" style="background:hsl(0, 0%, 100%)"></td>
+                <td class="cell bg" style="background:hsla(0, 0%, 100%, 1)"></td>
+                <td><dfn id="white">white</dfn></td>
+                <td class="cell" style="background:silver">0,0%,100%</td>
+                <td class="cell" style="background:silver">0,0%,100%,1</td>
+                <td class="cell" style="background:silver">#FFFFFF</td>
+                <td class="cell" style="background:silver">255,255,255</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
+    </div>
+</footer>
+</body>
+</html>

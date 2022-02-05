@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color</title>
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+table.color-table td {text-align:center }
+table.color-table td.cell { text-transform:uppercase }
+table.color-table td:first-child, table.color-table td:first-child+td { border:1px solid black }
+table.color-table th {text-align:center; background:black; color:white }
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+    </script>
+</head>
+<body>
+<div id="container">
+    <div id="basic-color-table">
+        <table class="color-table">
+            <caption>Basic Colors</caption>
+            <tbody>
+            <tr>
+                <th style="background:black">Named</th>
+                <th>Numeric</th>
+                <th>Color Name</th>
+                <th>Hex RGB</th>
+                <th>Decimal</th>
+            </tr>
+            <tr>
+                <td class="cell" style="background:black"></td>
+                <td class="cell" style="background:#000000"></td>
+                <td><dfn id="black">black</dfn></td>
+                <td class="cell" style="background:silver">#000000</td>
+                <td class="cell" style="background:silver">0,0,0</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:silver"></td>
+                <td class="cell" style="background:#C0C0C0"></td>
+                <td><dfn id="silver">silver</dfn></td>
+                <td class="cell" style="background:silver">#C0C0C0</td>
+                <td class="cell" style="background:silver">192,192,192</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:gray"></td>
+                <td class="cell" style="background:#808080"></td>
+                <td><dfn id="gray">gray</dfn></td>
+                <td class="cell" style="background:silver">#808080</td>
+                <td class="cell" style="background:silver">128,128,128</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:white"></td>
+                <td class="cell" style="background:#FFFFFF"></td>
+                <td><dfn id="white">white</dfn></td>
+                <td class="cell" style="background:silver">#FFFFFF</td>
+                <td class="cell" style="background:silver">255,255,255</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:maroon"></td>
+                <td class="cell" style="background:#800000"></td>
+                <td><dfn id="maroon">maroon</dfn></td>
+                <td class="cell" style="background:silver">#800000</td>
+                <td class="cell" style="background:silver">128,0,0</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:red"></td>
+                <td class="cell" style="background:#FF0000"></td>
+                <td><dfn id="red">red</dfn></td>
+                <td class="cell" style="background:silver">#FF0000</td>
+                <td class="cell" style="background:silver">255,0,0</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:purple"></td>
+                <td class="cell" style="background:#800080"></td>
+                <td><dfn id="purple">purple</dfn></td>
+                <td class="cell" style="background:silver">#800080</td>
+                <td class="cell" style="background:silver">128,0,128</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:fuchsia"></td>
+                <td class="cell" style="background:#FF00FF"></td>
+                <td><dfn id="fuchsia">fuchsia</dfn></td>
+                <td class="cell" style="background:silver">#FF00FF</td>
+                <td class="cell" style="background:silver">255,0,255</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:green"></td>
+                <td class="cell" style="background:#008000"></td>
+                <td><dfn id="green">green</dfn></td>
+                <td class="cell" style="background:silver">#008000</td>
+                <td class="cell" style="background:silver">0,128,0</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:lime"></td>
+                <td class="cell" style="background:#00FF00"></td>
+                <td><dfn id="lime">lime</dfn></td>
+                <td class="cell" style="background:silver">#00FF00</td>
+                <td class="cell" style="background:silver">0,255,0</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:olive"></td>
+                <td class="cell" style="background:#808000"></td>
+                <td><dfn id="olive">olive</dfn></td>
+                <td class="cell" style="background:silver">#808000</td>
+                <td class="cell" style="background:silver">128,128,0</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:yellow"></td>
+                <td class="cell" style="background:#FFFF00"></td>
+                <td><dfn id="yellow">yellow</dfn></td>
+                <td class="cell" style="background:silver">#FFFF00</td>
+                <td class="cell" style="background:silver">255,255,0</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:navy"></td>
+                <td class="cell" style="background:#000080"></td>
+                <td><dfn id="navy">navy</dfn></td>
+                <td class="cell" style="background:silver">#000080</td>
+                <td class="cell" style="background:silver">0,0,128</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:blue"></td>
+                <td class="cell" style="background:#0000FF"></td>
+                <td><dfn id="blue">blue</dfn></td>
+                <td class="cell" style="background:silver">#0000FF</td>
+                <td class="cell" style="background:silver">0,0,255</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:teal"></td>
+                <td class="cell" style="background:#008080"></td>
+                <td><dfn id="teal">teal</dfn></td>
+                <td class="cell" style="background:silver">#008080</td>
+                <td class="cell" style="background:silver">0,128,128</td>
+            </tr>
+            <tr>
+                <td class="cell" style="background:aqua"></td>
+                <td class="cell" style="background:#00FFFF"></td>
+                <td><dfn id="aqua">aqua</dfn></td>
+                <td class="cell" style="background:silver">#00FFFF</td>
+                <td class="cell" style="background:silver">0,255,255</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
+    </div>
+</footer>
+</body>
+</html>
