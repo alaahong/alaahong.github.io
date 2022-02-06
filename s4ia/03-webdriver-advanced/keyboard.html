@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard</title>
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.g {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1px;
+  grid-row-gap: 1px;
+
+  @media screen and (min-width: 500px){
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media screen and (min-width: 800px){
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+.g div {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: black;
+  line-height: 1;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+
+
+
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+
+
+
+
+
+    </script>
+</head>
+<body>
+<div id="container">
+    <div>
+        <h2>keyboard-sample</h2>
+        <div>
+            <label for="keyboard-input-text">keyboard-input-text</label>
+            <input type="text" id="keyboard-input-text" placeholder="text">
+        </div>
+        <div>
+            <label for="keyboard-textarea">keyboard-textarea</label>
+            <textarea id="keyboard-textarea" placeholder="textarea"></textarea>
+        </div>
+        <div>
+            <label for="span">span</label>
+            <span id="span">element not interactable</span>
+        </div>
+        <div>
+            <label for="progress">progress</label>
+            <progress id="progress" max="100" value="50">progress</progress>
+        </div>
+    </div>
+    <div id="keyboard-input">
+        <h2>keyboard-input</h2>
+        <div class='g'>
+            <!--可以正确输入并通过value获取目标值-->
+            <div><label for="text">text</label><input type="text" id="text"></div>
+            <div><label for="email">email</label><input type="email" id="email"></div>
+            <div><label for="number">number</label><input type="number" id="number"></div>
+            <div><label for="search">search</label><input type="search" id="search"></div>
+            <div><label for="tel">tel</label><input type="tel" id="tel"></div>
+            <div><label for="url">url</label><input type="url" id="url"></div>
+            <div><label for="password">password</label><input type="password" id="password"></div>
+            <div><label for="color">color</label><input type="color" id="color"></div>
+            <!--日期时间相关的元素不会报错，但是应该采用其他方式进行赋值-->
+            <div><label for="date">date</label><input type="date" id="date"></div>
+            <div><label for="datetime-local">dt-local</label><input type="datetime-local" id="datetime-local"></div>
+            <div><label for="month">month</label><input type="month" id="month"></div>
+            <div><label for="week">week"</label><input type="week" id="week"></div>
+            <div><label for="time">time</label><input type="time" id="time"></div>
+            <!--以下元素也不会报错，但是不适合作为键盘输入的目标-->
+            <div><label for="image">image</label><input type="image" id="image"></div>
+            <div><label for="reset">reset</label><input type="reset" id="reset"></div>
+            <div><label for="submit">submit</label><input type="submit" id="submit"></div>
+            <div><label for="range">range</label><input type="range" id="range"></div>
+            <div><label for="button">button</label><input type="button" id="button"></div>
+            <div><label for="radio">radio</label><input type="radio" id="radio"></div>
+            <div><label for="checkbox">checkbox</label><input type="checkbox" id="checkbox"></div>
+            <!--文件元素可以通过sendKeys进行操作，但是错误参数格式会抛出异常-->
+            <div><label for="file">file</label><input type="file" id="file"></div>
+            <!--隐藏元素不可见，无法通过sendKeys进行操作-->
+            <div><label for="hidden">hidden</label><input type="hidden" id="hidden"></div>
+        </div>
+    </div>
+    <div >
+        <div>
+            <h2>元素的sendKeys方法可以同时输入多个按键</h2>
+            <label for="keyboard-multiple-1">keyboard-multiple-1</label>
+            <input id="keyboard-multiple-1">
+        </div>
+        <div>
+            <h2>Keys.chord也可以提供多个按键同时输入的效果</h2>
+            <label for="keyboard-multiple-2">keyboard-multiple-2</label>
+            <input id="keyboard-multiple-2">
+        </div>
+        <div>
+            <h2>Actions可以用于输入操作</h2>
+            <label for="keyboard-multiple-3">keyboard-multiple-3</label>
+            <input id="keyboard-multiple-3">
+        </div>
+        <div>
+            <h2>Actions操作修饰键时的行为有些不同</h2>
+            <label for="keyboard-multiple-4">keyboard-multiple-4</label>
+            <input id="keyboard-multiple-4">
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
+    </div>
+</footer>
+</body>
+</html>
