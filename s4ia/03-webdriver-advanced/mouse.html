@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click</title>
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+    </style>
+
+</head>
+<body>
+<div id="container">
+    <div id="click-stage">
+        <h2>click stage</h2>
+        <div>
+            <button id="hello-btn">hello</button>
+        </div>
+        <div>
+            <button id="bye-btn">bye</button>
+        </div>
+        <div id="click-event"></div>
+    </div>
+</div>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script>
+var helloBtn = document.getElementById('hello-btn');
+helloBtn.addEventListener("mouseover",function(){ appendChildP("mouseover")});
+helloBtn.addEventListener("click", function(){ appendChildP("click")});
+helloBtn.addEventListener("dblclick", function(){ appendChildP("dblclick")});
+helloBtn.addEventListener("contextmenu", function(){ appendChildP("contextmenu")});
+helloBtn.addEventListener("focus", function(){ appendChildP("focus")});
+helloBtn.addEventListener("mouseout", function(){ appendChildP("mouseout")});
+helloBtn.addEventListener("mousedown", function(){ appendChildP("mousedown")});
+helloBtn.addEventListener("mouseup", function(){ appendChildP("mouseup")});
+helloBtn.addEventListener("blur", function(){ appendChildP("blur")});
+helloBtn.addEventListener("touchend", function(){ appendChildP("touchend")});
+helloBtn.addEventListener("touchstart", function(){ appendChildP("touchstart")});
+function appendChildP(content){
+	// 创建p节点
+	let para=document.createElement("p");
+	// 创建文本节点
+	let textNode=document.createTextNode(content);
+	// 把文本节点添加到p节点里
+	para.appendChild(textNode);
+	// 查找click-event
+	let root=document.getElementById("click-event");
+	// 把p节点添加到div1里
+	root.appendChild(para);
+}
+window.οnlοad=function () {
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear();
+}
+</script>
+
+</html>
