@@ -4,5 +4,5 @@ shadowRoot1.innerHTML = `
             `
 let exp = ['+','-','*','/']
 let mark = exp[Math.floor(Math.random() * 3)]
-document.querySelector("body > div:nth-child(3) > div:nth-child(3)").id= ("id-" + Math.floor(Math.random() * 11))
 document.querySelector("body > div:nth-child(3) > div > p").innerText = ((Math.floor(Math.random() * 11)+1) + mark + (Math.floor(Math.random() * 11)+1))
+document.querySelector("body > div:nth-child(3) > div > p").id= ("id-" + Math.floor(Math.random() * 11))
