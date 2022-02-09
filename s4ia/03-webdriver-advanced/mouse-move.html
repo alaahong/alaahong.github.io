@@ -19,19 +19,23 @@
     margin-left: auto;
 }
     </style>
-
+    <style type="text/css">
+#dnd-box-1, #dnd-box-2
+{float:left; width:200px; height:200px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
+#target-box
+{float:center; width:100px; height:100px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
+</style>
 </head>
 <body>
 <div id="container">
-    <div id="click-stage">
-        <h2>click stage</h2>
+    <div id="move-stage">
+        <h2>drag and drop</h2>
         <div>
-            <button id="hello-btn" title="hello-btn">hello</button>
+            <div id="dnd-box-1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="target-box" draggable="true" ondragstart="drag(event)" ><p>Let's move</p></div>
+            </div>
+            <div id="dnd-box-2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         </div>
-        <div>
-            <button id="bye-btn">bye</button>
-        </div>
-        <div id="click-event"></div>
     </div>
 </div>
 <footer class="footer">
@@ -47,6 +51,23 @@
 </footer>
 </body>
 <script>
+function allowDrop(ev)
+{
+ev.preventDefault();
+}
+
+function drag(ev)
+{
+ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop(ev)
+{
+ev.preventDefault();
+var data=ev.dataTransfer.getData("Text");
+ev.target.appendChild(document.getElementById(data));
+}
+
 var helloBtn = document.getElementById('hello-btn');
 helloBtn.addEventListener("mouseover",function(){ appendChildP("mouseover")});
 helloBtn.addEventListener("click", function(){ appendChildP("click")});
