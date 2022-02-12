@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+
+
+
+
+    </script>
+</head>
+<body>
+<div id="container">
+    <div>
+        <h2>Execute JavaScript</h2>
+        <div>
+            <form action="#" method="get">
+                <div><label for="username-input">Username:</label><input id="username-input" type="text"></div>
+                <div><label for="password-input">Password:</label><input id="password-input" type="password"></div>
+                <div><label for="remark-input">Remark:</label><textarea id="remark-input"></textarea></div>
+                <div><input type="submit" id="submit-btn" value="Submit"/> <input type="reset" id="reset-btn" value="Reset"></div>
+            </form>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
+    </div>
+</footer>
+</body>
+</html>
