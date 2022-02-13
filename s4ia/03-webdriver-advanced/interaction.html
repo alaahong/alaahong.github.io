@@ -22,6 +22,8 @@
 
 
 
+
+
     </style>
     <script>
 window.onload=function(){
@@ -41,6 +43,8 @@ function doPrompt()
   let result = prompt("What's your name?")
   document.querySelector("#prompt-result").innerHTML  = result
   }
+
+
     </script>
 </head>
 <body>
@@ -58,11 +62,26 @@ function doPrompt()
         </div>
     </div>
     <div>
-        <h2>File</h2>
-        <a href="https://www.ianzhang.cn/s4ia/static/data/ian/async-sample.json"
-           id="download-link-1" target="_blank" download="test.json" >download new window</a>
-        <a href="https://www.ianzhang.cn/s4ia/static/data/ian/async-sample.json"
-           id="download-link-2" target="_blank" download="file.test" >download file</a>
+        <h2>File Download</h2>
+        <div>
+            <a href="https://www.ianzhang.cn/s4ia/static/data/ian/file.test"
+               id="download-link-1" target="_blank" download="file.test">download1</a>
+        </div>
+        <div>
+            <a href="https://www.ianzhang.cn/s4ia/static/data/ian/async-sample.json"
+               id="download-link-2" target="_blank" download="async-sample.json">download2</a>
+        </div>
+    </div>
+    <div>
+        <h2>File Upload</h2>
+        <div>
+            <label for="single-upload">Single File Upload: </label>
+            <input type="file" value="upload" id="single-upload">
+        </div>
+        <div>
+            <label for="multiple-upload">Multiple File Upload: </label>
+            <input type="file" value="upload" id="multiple-upload" multiple>
+        </div>
     </div>
     <div>
         <h2>Cookie</h2>
