@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaction</title>
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+function doAlert()
+  {
+  alert("I am an alert")
+  }
+function doConfirm()
+  {
+  let result = confirm("I am a confirm")
+  document.querySelector("#confirm-result").innerHTML  = result
+  }
+function doPrompt()
+  {
+  let result = prompt("What's your name?")
+  document.querySelector("#prompt-result").innerHTML  = result
+  }
+    </script>
+</head>
+<body>
+<div id="container">
+    <div>
+        <h2>Alert</h2>
+        <div><input id="alert-btn" type="button" value="alert" onclick="doAlert()"></div>
+        <div>
+            <input id="confirm-btn" type="button" value="confirm" onclick="doConfirm()">
+            <span id="confirm-result"></span>
+        </div>
+        <div>
+            <input id="prompt-btn" type="button" value="prompt" onclick="doPrompt()">
+            <span id="prompt-result"></span>
+        </div>
+    </div>
+    <div>
+        <h2>File</h2>
+        <a href="https://www.ianzhang.cn/s4ia/static/data/ian/async-sample.json"
+           id="download-link-1" target="_blank" download="test.json" >download new window</a>
+        <a href="https://www.ianzhang.cn/s4ia/static/data/ian/async-sample.json"
+           id="download-link-2" target="_blank" download="file.test" >download file</a>
+    </div>
+    <div>
+        <h2>Cookie</h2>
+    </div>
+    <div>
+        <h2>Screenshot</h2>
+    </div>
+</div>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
+    </div>
+</footer>
+</body>
+</html>
