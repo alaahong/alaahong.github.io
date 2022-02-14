@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie</title>
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+    </style>
+</head>
+<body>
+<div id="container">
+    <div>
+        <h2>Cookie</h2>
+        <div>
+            <h1><span id="hello-span"></span></h1>
+            <div id="login-link" hidden>
+                <a href="https://www.ianzhang.cn/s4ia/03-webdriver-advanced/cookie-login.html">go to login page</a>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script>
+function getCookieByString(cookieName){
+var start = document.cookie.indexOf(cookieName+'=')
+if (start == -1) return ''
+start = start+cookieName.length+1
+var end = document.cookie.indexOf(';', start)
+if (end == -1) end=document.cookie.length
+return document.cookie.substring(start, end)
+}
+window.onload=function(){
+let username = 'Hi! ' + getCookieByString('username')
+let sessionId = getCookieByString('sessionid')
+if(username !== '' && sessionId !== ''){
+document.querySelector("#hello-span").innerHTML=username
+}else{
+document.querySelector("#login-link").removeAttribute('hidden')
+}
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+</script>
+</html>

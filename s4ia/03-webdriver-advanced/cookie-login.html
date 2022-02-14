@@ -18,14 +18,22 @@
     margin-right: auto;
     margin-left: auto;
 }
-
-
     </style>
     <script>
 window.onload=function(){
 document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
 }
-
+function login(){
+let username = document.querySelector("#username-input").value
+let sessionId = hex_md5(username)
+let d = new Date()
+//d.setTime(d.getTime()+(days*24*60*60*1000))
+d.setTime(d.getTime()+(10*1000))
+let expires = "expires="+d.toGMTString()
+document.cookie = "sessionid=" + sessionId + "; " + expires
+document.cookie = "username=" + username + "; " + expires
+window.location.href="https://www.ianzhang.cn/s4ia/03-webdriver-advanced/cookie.html"
+}
     </script>
 </head>
 <body>
@@ -36,7 +44,7 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
             <form action="#" method="get">
                 <div><label for="username-input">Username:</label><input id="username-input" type="text"></div>
                 <div><label for="password-input">Password:</label><input id="password-input" type="password"></div>
-                <div><input type="submit" id="submit-btn" value="Submit"/> <input type="reset" id="reset-btn"
+                <div><input type="button" id="submit-btn" value="Submit" onclick="login()"/> <input type="reset" id="reset-btn"
                                                                                   value="Reset"></div>
             </form>
         </div>
@@ -54,4 +62,5 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
     </div>
 </footer>
 </body>
+<script src="https://www.ianzhang.cn/s4ia/static/js/ian/lib/md5.js"></script>
 </html>
