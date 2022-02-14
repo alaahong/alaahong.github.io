@@ -53,6 +53,9 @@ var end = document.cookie.indexOf(';', start)
 if (end == -1) end=document.cookie.length
 return document.cookie.substring(start, end)
 }
+function login(username,password){
+return hex_md5(username)
+}
 window.onload=function(){
 let username = 'Hi! ' + getCookieByString('username')
 let sessionId = getCookieByString('sessionid')
