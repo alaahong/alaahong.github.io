@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<script type='text/javascript'>
+alert("Hello");
+function init(){
+    setTimeout(function () {
+            document.querySelector('iframe').src = 'https://www.ianzhang.cn/temp/inside-chenyichao.html';
+    }, 3000);
+}
+</script>
+<body onload="init()">
+<div id="modal">
+    <iframe name="inside"></iframe>
+</div>
+</body>
+<style>
+.index-banner-top {
+    width: 100%;
+    background: url(../img/th.jfif) no-repeat;
+    height: 50px;
+}
+@media only screen and (max-width: 640px){
+    .index-banner-top {
+        height: 100px;
+    }
+}
+
+.span-class {
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-size: big;
+    font-family: Arial,Helvetica,Sans-Serif;
+    font-weight: 400;
+    margin-left: 18px;
+    margin-right: 18px;
+    zoom: 1;
+    vertical-align: middle;
+    line-height: 50px !important;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 1;
+}
+body {
+    margin: 0; /* Reset default margin */
+}
+iframe {
+    display: block; /* iframes are inline by default */
+    border: none; /* Reset default border */
+    height: 100vh; /* Viewport-relative units */
+    width: 100vw;
+}
+</style>
+</html>
