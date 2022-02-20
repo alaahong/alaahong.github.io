@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exception</title>
+    <style>
+#container {
+  min-height: calc(100vh - 125px);
+}
+.footer {
+    text-align: center;
+    height: 100px;
+}
+.footer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.outer-div{
+    position: relative;
+}
+#ecie-div-1{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    z-index: 2;
+}
+#ecie-div-2{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: yellow;
+    z-index: 1;
+}
+.ense-1{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+}
+.ense-2{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+}
+
+
+
+
+    </style>
+    <script>
+window.onload=function(){
+document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+}
+
+
+
+
+
+    </script>
+</head>
+<body>
+<div id="container">
+    <div id="uce-div">
+        <h2>UnsupportedCommandException</h2>
+        <div>
+            <button id="uce-button">uce-button</button>
+        </div>
+    </div>
+    <hr>
+    <div id="enie-div">
+        <h2>ElementNotInteractableException</h2>
+        <div><label for="enie-input">enie-input:</label><input type="text" id="enie-input"></div>
+    </div>
+    <hr>
+    <div id="ecie-div" style="height:100px;">
+        <h2>ElementClickInterceptedException</h2>
+        <div><p id="ecie-status"></p></div>
+        <div class="outer-div">
+            <div id="ecie-div-1" onclick="javascript:document.querySelector('#ecie-status').textContent='1'"></div>
+            <div id="ecie-div-2" onclick="javascript:document.querySelector('#ecie-status').textContent='2'"></div>
+        </div>
+    </div>
+    <hr>
+    <div id="iese-div">
+        <h2>InvalidElementStateException</h2>
+        <div>
+            <input id="iese-input-1" value="iese-input-1" readonly>
+        </div>
+        <div>
+            <input id="iese-input-2" value="iese-input-2" disabled>
+        </div>
+    </div>
+    <hr>
+    <div id="mtobe-div">
+        <h2>MoveTargetOutOfBoundsException</h2>
+        <div>
+            <p draggable="true" id="mtobe-p">MoveTargetOutOfBoundsException</p>
+        </div>
+    </div>
+    <hr>
+    <div id="nssre-div">
+        <h2>NoSuchShadowRootException</h2>
+        <div>
+            <p id="nssre-p">NoSuchShadowRootException</p>
+        </div>
+    </div>
+    <hr>
+    <div id="sere-div">
+        <h2>StaleElementReferenceException</h2>
+        <div>
+            <p id="sere-p">StaleElementReferenceException</p>
+        </div>
+    </div>
+    <hr>
+    <div id="ise-div">
+        <h2>InvalidSelectorException</h2>
+        <div>
+            <p id="ise-p">InvalidSelectorException</p>
+        </div>
+    </div>
+    <hr>
+    <div id="uoe-div">
+        <h2>UnsupportedOperationException</h2>
+        <div>
+            <select id="uoe-select" disabled>
+                <option id="uoe-option-1" disabled>uoe-option-1</option>
+                <option id="uoe-option-2" hidden>uoe-option-2</option>
+                <option id="uoe-option-3" selected>uoe-option-3</option>
+            </select>
+        </div>
+    </div>
+    <hr>
+</div>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
+    </div>
+</footer>
+</body>
+</html>
