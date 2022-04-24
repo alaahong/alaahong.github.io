@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <title>get element information</title>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -21,17 +20,11 @@
 }
 
 
-
-
-
     </style>
     <script>
 window.onload=function(){
 document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
 }
-
-
-
 
 
     </script>
@@ -41,7 +34,9 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
     <div>
         <div>
             <div><h2>getTagName</h2></div>
+            <!--            定义一个div标签-->
             <div name="get-tag-name">tag1</div>
+            <!--            定义一个自定义标签，标签名为i-am-a-tag-->
             <i-am-a-tag name="get-tag-name">tag2</i-am-a-tag>
         </div>
         <div>
@@ -321,18 +316,18 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
             </div>
         </div>
     </div>
-    <footer class="footer">
-        <hr>
-        <div class="footer-container">
-            <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
-                | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
-                | <a href="mailto:hi@ianzhang.cn">Mail</a>
-            </p>
-            <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
-            </p>
-        </div>
-    </footer>
-
+</div>
+<footer class="footer">
+    <hr>
+    <div class="footer-container">
+        <p><a href="https://github.com/alaahong/" target="_blank">Github</a>
+            | <a href="https://www.linkedin.com/in/alaahong/" target="_blank">LinkedIn</a>
+            | <a href="mailto:hi@ianzhang.cn">Mail</a>
+        </p>
+        <p>© 2021<span id="footer-year"></span> <a href="https://www.ianzhang.cn" target="_blank">IanZhang</a>
+        </p>
+    </div>
+</footer>
 </body>
 <script>
  let shadowRoot1 = document.getElementById('get-shadow-root-1').attachShadow({mode: 'open'});
@@ -344,10 +339,6 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
   shadowRoot2.innerHTML = `
               <span id="shadow-content-1">shadow-content-1</span>
             `;
-
-
-
-
 
 
 </script>

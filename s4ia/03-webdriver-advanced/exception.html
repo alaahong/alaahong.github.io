@@ -51,11 +51,15 @@
 
 
 
+
+
     </style>
     <script>
 window.onload=function(){
 document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
 }
+
+
 
 
 
@@ -83,6 +87,16 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
         <div class="outer-div">
             <div id="ecie-div-1" onclick="javascript:document.querySelector('#ecie-status').textContent='1'"></div>
             <div id="ecie-div-2" onclick="javascript:document.querySelector('#ecie-status').textContent='2'"></div>
+        </div>
+    </div>
+    <hr>
+    <div id="se-div" style="height:100px;">
+        <h2>ScreenshotException</h2>
+        <div>
+            <button id="se-btn" onclick="document.querySelector('#outer-se-input').setAttribute('hidden','hidden')">hidden</button>
+        </div>
+        <div class="outer-div" id="outer-se-input">
+            <input id="se-input" placeholder="se-input"/>
         </div>
     </div>
     <hr>
