@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>page load strategies</title>
+</head>
+<body>
+<div class="controls">
+    <button id="reload" type="button">Reload</button>
+</div>
+
+<div class="event-log">
+    <label>Event log:</label>
+    <textarea
+            readonly
+            class="event-log-contents"
+            rows="8"
+            cols="30"
+    ></textarea>
+</div>
+</body>
+<script>
+    const log = document.querySelector('.event-log-contents')
+    const reload = document.querySelector('#reload')
+
+    reload.addEventListener('click', () => {
+      log.textContent = ''
+      window.setTimeout(() => {
+        window.location.reload(true)
+      }, 200)
+    })
+
+    window.addEventListener('load', event => {
+      log.textContent = log.textContent + 'load\n'
+    })
+
+    document.addEventListener('readystatechange', event => {
+      log.textContent = log.textContent + `readystate: ${document.readyState}\n`
+    })
+
+    document.addEventListener('DOMContentLoaded', event => {
+      log.textContent = log.textContent + `DOMContentLoaded\n`
+    })
+    window.addEventListener('load', (event) => {
+        console.log('page is fully loaded');
+    });
+    document.addEventListener('DOMContentLoaded', (event) => {
+        console.log('DOM fully loaded and parsed');
+    });
+
+</script>
+</html>
