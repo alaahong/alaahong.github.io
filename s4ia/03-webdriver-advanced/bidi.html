@@ -41,20 +41,32 @@
   cursor: pointer;
   transition: all .3s ease;
 }
-
     </style>
     <script>
 window.onload=function(){
 document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
+var observer = new MutationObserver(function (mutations, observer) {
+  mutations.forEach(function(mutation) {
+    console.log(mutation);
+  });
+});
+var moInput = document.querySelector('#mo-input');
+mutationObserver.observe(moInput, {
+  attributes: true,
+  characterData: true,
+  childList: true,
+  subtree: true,
+  attributeOldValue: true,
+  characterDataOldValue: true
+});
 }
-
     </script>
 </head>
 <body>
 <div id="container">
     <div>
         <h1>Mutation Observation</h1>
-        <input id="mo" placeholder="Mutation Observation">
+        <input id="mo-input" placeholder="Mutation Observation">
     </div>
 </div>
 <footer class="footer">
