@@ -45,13 +45,13 @@
     <script>
 window.onload=function(){
 document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
-var observer = new MutationObserver(function (mutations, observer) {
+let observer = new MutationObserver(function (mutations, observer) {
   mutations.forEach(function(mutation) {
     console.log(mutation);
   });
 });
-var moInput = document.querySelector('#mo-input');
-mutationObserver.observe(moInput, {
+let moInput = document.querySelector('#mo-input');
+observer.observe(moInput, {
   attributes: true,
   characterData: true,
   childList: true,
