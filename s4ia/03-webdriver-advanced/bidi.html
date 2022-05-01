@@ -74,6 +74,7 @@ observer.observe(moInput, {
     </div>
     <div>
         <h1>Console Log Event</h1>
+        <button name="console-name" onclick="console.log('format %s','log')">format log</button>
         <button name="console-name" onclick="console.log('console.log')">console.log</button>
         <button name="console-name" onclick="console.info('console.info')">console.info</button>
         <button name="console-name" onclick="console.error('console.error')">console.error</button>
@@ -82,7 +83,7 @@ observer.observe(moInput, {
         <button name="console-name" onclick="console.warn('console.warn')">console.warn</button>
     </div>
     <div>
-        <h1>JavascriptException</h1>
+        <h1>Javascript Exception</h1>
         <button name="exception-name" onclick="throw new Error('Test For JavascriptException 1')">Exception 1</button>
         <button name="exception-name" onclick="throw new Error('Test For JavascriptException 2')">Exception 2</button>
     </div>
