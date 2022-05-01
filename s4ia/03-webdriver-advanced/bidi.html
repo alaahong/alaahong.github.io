@@ -42,6 +42,7 @@
   transition: all .3s ease;
 }
 
+
     </style>
     <script>
 window.onload=function(){
@@ -62,6 +63,7 @@ observer.observe(moInput, {
 });
 }
 
+
     </script>
 </head>
 <body>
@@ -78,6 +80,11 @@ observer.observe(moInput, {
         <button name="console-name" onclick="console.debug('console.debug')">console.debug</button>
         <button name="console-name" onclick="console.trace('console.trace')">console.trace</button>
         <button name="console-name" onclick="console.warn('console.warn')">console.warn</button>
+    </div>
+    <div>
+        <h1>JavascriptException</h1>
+        <button name="exception-name" onclick="throw new Error('Test For JavascriptException 1')">Exception 1</button>
+        <button name="exception-name" onclick="throw new Error('Test For JavascriptException 2')">Exception 2</button>
     </div>
 </div>
 <footer class="footer">
