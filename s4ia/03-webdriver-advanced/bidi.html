@@ -44,6 +44,7 @@
 
 
 
+
     </style>
     <script>
 window.onload=function(){
@@ -66,6 +67,7 @@ observer.observe(moInput, {
 
 
 
+
     </script>
 </head>
 <body>
@@ -78,7 +80,7 @@ observer.observe(moInput, {
         <h1>Console Log Event</h1>
         <button name="console-name" onclick="console.log('format %s','log')">format log</button>
         <button name="console-name"
-                onclick="let obj = {action:'format',target:'log'}; console.log(`${obj.action} %s`,obj.target)">param log
+                onclick="let obj = {action:'format',msg:'log'}; console.log(`%s ${obj.msg}`,obj.action)">param log
         </button>
         <button name="console-name" onclick="console.log('console.log')">console.log</button>
         <button name="console-name" onclick="console.info('console.info')">console.info</button>
