@@ -51,6 +51,18 @@ input {
     font-size: 16px;
 }
 </style>
+<script>
+window.onload=function(){
+    setTimeout(function () {
+        let fragment = document.createDocumentFragment()
+        let p = document.createElement('p')
+        p.id = "temp-id"
+        p.innerHTML = new Date().toLocaleDateString()
+        fragment.appendChild(p)
+        document.querySelector("#tail-div").appendChild(fragment)
+	}, 5000);
+}
+</script>
 </head>
 <body>
 <div id="parent-div">
@@ -72,6 +84,8 @@ input {
         </div>
         <div>
             <p id="result-p" class="result" style="color:red;"></p>
+        </div>
+        <div id="tail-div">
         </div>
     </form>
 </div>
