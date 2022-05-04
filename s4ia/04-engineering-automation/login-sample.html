@@ -56,7 +56,7 @@ window.onload=function(){
     setTimeout(function () {
         let fragment = document.createDocumentFragment()
         let p = document.createElement('p')
-        p.id = "temp-id"
+        p.id = "load-date"
         p.innerHTML = new Date().toLocaleDateString()
         fragment.appendChild(p)
         document.querySelector("#tail-div").appendChild(fragment)
