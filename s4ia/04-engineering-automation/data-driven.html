@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Driven</title>
+</head>
+<body>
+<div>
+    <div id="name-div">
+        <div>
+            <button id="query-name-btn" onclick="getQueryName('name')">Get Query Name</button>
+        </div>
+        <div>
+            <label for="query-name">Query Name: </label>
+            <input required id="query-name" type="text">
+        </div>
+    </div>
+    <div id="calculation-div">
+        <form action="" id="form">
+            <h1 id="calculation" style="text-align: center;color: white;">Calculation</h1>
+            <div>
+                <label for="p1">Parameter 1: </label>
+                <input required id="p1" type="text" placeholder="Parameter 1">
+            </div>
+            <p></p>
+            <div>
+                <label for="p2">Parameter 2: </label>
+                <input required id="p2" type="text" placeholder="Parameter 2">
+            </div>
+            <p></p>
+            <div style="text-align: left;margin-top: 30px;">
+                <input type="button" id="compute-btn" class="button" value="COMPUTE" onclick="compute()">
+                <input type="reset" id="reset-btn" class="button" value="RESET">
+            </div>
+
+            <div>
+                <label for="result">Result: </label>
+                <input required id="result" type="text">
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+function compute(){
+    let p1 = document.querySelector("#p1").value
+    let p2 = document.querySelector("#p2").value
+    let result = document.querySelector("#result")
+    result.value  = (Number.parseInt(p1) + Number.parseInt(p2))
+}
+//获取url上的参数
+function getQueryName(name) {
+    let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i")
+    let r = window.location.search.substr(1).match(reg)
+    if (r != null) document.querySelector("#query-name").value=unescape(r[2])
+ }
+
+
+</script>
+</body>
+</html>
