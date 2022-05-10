@@ -11,7 +11,7 @@
             <button id="query-name-btn" onclick="getQueryName('name')">getQueryName</button>
         </div>
         <div>
-            <label for="query-name">QueryName</label>
+            <label for="query-name">QueryName: </label>
             <input required id="query-name" type="text">
         </div>
     </div>
@@ -19,12 +19,12 @@
         <form action="" id="form">
             <h1 id="calculation" style="text-align: center;color: white;">Calculation</h1>
             <div>
-                <label for="p1">Parameter 1</label>
+                <label for="p1">Parameter 1: </label>
                 <input required id="p1" type="text" placeholder="Parameter 1">
             </div>
             <p></p>
             <div>
-                <label for="p2">Parameter 2</label>
+                <label for="p2">Parameter 2: </label>
                 <input required id="p2" type="text" placeholder="Parameter 2">
             </div>
             <p></p>
@@ -34,7 +34,7 @@
             </div>
 
             <div>
-                <label for="result">Result</label>
+                <label for="result">Result: </label>
                 <input required id="result" type="text">
             </div>
         </form>
@@ -52,7 +52,6 @@ function getQueryName(name) {
     let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i")
     let r = window.location.search.substr(1).match(reg)
     if (r != null) document.querySelector("#query-name").value=unescape(r[2])
-    return null
  }
 
 </script>
