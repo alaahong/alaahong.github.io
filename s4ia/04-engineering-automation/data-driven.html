@@ -7,6 +7,7 @@
 <body>
 <div>
     <div id="name-div">
+        <div><h2>Query Name</h2></div>
         <div>
             <button id="query-name-btn" onclick="getQueryName('name')">Get Query Name</button>
         </div>
@@ -15,6 +16,7 @@
             <input required id="query-name" type="text">
         </div>
     </div>
+    <hr>
     <div id="calculation-div">
         <form action="" id="form">
             <h1 id="calculation" style="text-align: center;color: white;">Calculation</h1>
@@ -39,6 +41,30 @@
             </div>
         </form>
     </div>
+    <hr>
+    <div id="order-div">
+        <div><h2>Order</h2></div>
+        <div><p>Order Number: <span id="order-number">ORDER00001</span></p></div>
+        <div><p>Order Date: <span id="order-date">2022-05-01</span></p></div>
+        <table id="order-table" border="1" cellspacing="0">
+            <caption>Book Details</caption>
+            <tr>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Author</th>
+            </tr>
+            <tr>
+                <td>Java</td>
+                <td>99.99</td>
+                <td>James Gosling</td>
+            </tr>
+            <tr>
+                <td>Python</td>
+                <td>88</td>
+                <td>Guido van Rossum</td>
+            </tr>
+        </table>
+    </div>
 </div>
 <script>
 function compute(){
@@ -53,6 +79,11 @@ function getQueryName(name) {
     let r = window.location.search.substr(1).match(reg)
     if (r != null) document.querySelector("#query-name").value=unescape(r[2])
  }
+
+
+
+
+
 
 
 </script>
