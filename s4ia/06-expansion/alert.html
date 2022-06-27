@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alert</title>
+</head>
+<script>
+    function handleAlert(){
+        let action = alert("I'm the Alert")
+        document.getElementById('hello-id').innerHTML = 'Choose '+ action;
+    }
+
+
+</script>
+<body onload="handleAlert()">
+<div>
+    <h1 id="hello-id">hello</h1>
+</div>
+</body>
+</html>

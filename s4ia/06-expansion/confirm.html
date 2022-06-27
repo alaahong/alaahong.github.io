@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm</title>
+</head>
+<script>
+    function handleConfirm(){
+        let action = confirm('Would you like do something?')
+        document.getElementById('hello-id').innerHTML = 'Choose '+ action;
+    }
+
+</script>
+<body onload="handleConfirm()">
+<div>
+    <h1 id="hello-id"></h1>
+</div>
+What's your action?
+</body>
+</html>

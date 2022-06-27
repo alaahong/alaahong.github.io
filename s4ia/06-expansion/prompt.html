@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prompt</title>
+</head>
+<script>
+    function handlePrompt(){
+        let name = prompt('please input your name','')
+        document.getElementById('hello-id').innerHTML = 'Choose '+ name;
+    }
+</script>
+<body onload="handlePrompt()">
+    <div>
+        <h1 id="hello-id"></h1>
+    </div>What's your action?
+</body>
+</html>
