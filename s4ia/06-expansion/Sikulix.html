@@ -4,26 +4,15 @@
     <meta charset="UTF-8">
     <title>Sikulix</title>
     <script>
-    function result(){
-        let first = document.querySelector("#first").value
-        let second = document.querySelector("#second").value
-        alert(parseInt(first)+parseInt(second))
+    function doAlerting(){
+        alert("I'm the alert")
     }
-
     </script>
 </head>
 <body>
 <div>
     <div>
-        <label for="first">First Parameter</label>
-        <input id="first">
-    </div>
-    <div>
-        <label for="second">Second Parameter</label>
-        <input id="second">
-    </div>
-    <div>
-        <input id="result" type="button" onclick="result()" value="Result"></input>
+        <input id="open" type="button" onclick="doAlerting()" value="Open"></input>
     </div>
 </div>
 </body>
