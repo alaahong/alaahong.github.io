@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sikulix</title>
+    <script>
+    function result(){
+        let first = document.querySelector("#first").value
+        let second = document.querySelector("#second").value
+        alert(parseInt(first)+parseInt(second))
+    }
+    </script>
+</head>
+<body>
+<div>
+    <div>
+        <label for="first">First Parameter</label>
+        <input id="first">
+    </div>
+    <div>
+        <label for="second">Second Parameter</label>
+        <input id="second">
+    </div>
+    <div>
+        <button id="result" onclick="result()">Result</button>
+    </div>
+</div>
+</body>
+</html>
