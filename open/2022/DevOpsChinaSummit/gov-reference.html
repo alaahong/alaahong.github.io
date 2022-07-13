@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DevOpsChinaSummit-2022-Tianjin-Ian</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+
+<div id="app">
+
+    <v-toolbar
+    >
+        <v-toolbar-title>从零到一打造数字化转型技术团队 - 参考资料</v-toolbar-title>
+    </v-toolbar>
+    <v-app id="inspire">
+        <v-expansion-panels>
+            <v-expansion-panel v-for="(item,i) in items"
+                               :key="i">
+
+                <v-expansion-panel-header>
+                    <div class="d-flex w-100 justify-content-between">
+                        <small>{{item.date}}</small> &nbsp;&nbsp;
+                        <v-divider
+                                vertical
+                        ></v-divider> &nbsp;&nbsp;
+                        <h5 class="mb-1">{{item.title}}</h5>
+
+                    </div>
+                </v-expansion-panel-header>
+                <v-expansion-panel-content>
+                    <div style="white-space: pre-wrap;">{{item.desc}}</div>
+                    <v-divider></v-divider>
+                    <a :href="item.link"    x-small
+                       text>本页打开</a>  &nbsp;&nbsp;
+                    <a :href="item.link"    x-small
+                       text target="_blank">新窗口打开</a>
+                </v-expansion-panel-content>
+            </v-expansion-panel>
+        </v-expansion-panels>
+    </v-app>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+<script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data () {
+        return {
+        items: [
+        {
+          link: "http://www.gov.cn/xinwen/2019-08/23/content_5423691.htm",
+          title: "中国人民银行印发《金融科技（FinTech） 发展规划（2019—2021年）》",
+          desc: "一是加强金融科技战略部署；二是强化金融科技合理应用；三是赋能金融服务提质增效；四是增强金融风险技防能力；五是强化金融科技监管；六是夯实金融科技基础支撑。",
+          date: "2019-08"
+        },
+        {
+          link: "http://www.sasac.gov.cn/n2588020/n2588072/n2591148/n2591150/c15517908/content.html",
+          title: "关于加快推进国有企业数字化转型工作的通知",
+          desc: "着力推进智慧营销、智慧物流、智慧金融、智慧旅游、智慧供应链等建设，推动实体服务网点向虚拟智慧网点转变，打造智慧服务中心，发展基于互联网平台的用户服务，打造在线的数字服务产品，积极创新服务模式和商业模式，提升客户体验，提高客户黏性，拓展数字服务能力，扩展数字业务规模",
+          date: "2020-08"
+        },
+        {
+          link: "http://www.gov.cn/xinwen/2021-03/13/content_5592681.htm",
+          title: "中华人民共和国国民经济和社会发展第十四个五年规划和2035年远景目标纲要",
+          desc: "第五篇　加快数字化发展 建设数字中国\n第十五章　打造数字经济新优势\n第十六章　加快数字社会建设步伐\n第十七章　提高数字政府建设水平\n第十八章　营造良好数字生态",
+          date: "2021-03"
+        },
+        {
+          link: "http://www.pbc.gov.cn/goutongjiaoliu/113456/113469/4438627/index.html",
+          title: "中国人民银行印发《金融科技发展规划（2022-2025年）》",
+          desc: "强化金融科技治理，全面塑造数字化能力；建设绿色高可用数据中心；深化数字技术金融应用；加快监管科技的全方位应用，强化数字化监管能力建设；扎实做好金融科技人才培养，持续推动标准规则体系建设",
+          date: "2022-01"
+        },
+        {
+          link: "http://www.gov.cn/zhengce/zhengceku/2022-01/27/content_5670680.htm",
+          title: "中国银保监会办公厅关于银行业保险业数字化转型的指导意见",
+          desc: "到2025年，银行业保险业数字化转型取得明显成效。数字化金融产品和服务方式广泛普及，基于数据资产和数字化技术的金融创新有序实践，个性化、差异化、定制化产品和服务开发能力明显增强，金融服务质量和效率显著提高。数字化经营管理体系基本建成，数据治理更加健全，科技能力大幅提升，网络安全、数据安全和风险管理水平全面提升",
+          date: "2022-01"
+        }
+        ]
+    }
+  },
+    })
+</script>
+</body>
+</html>
