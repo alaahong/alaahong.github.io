@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/fonts/materialdesignicons-webfont.woff2" rel="stylesheet">
     <link href="css/materialdesignicons.min.css" rel="stylesheet">
     <link href="css/vuetify.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
@@ -75,6 +74,15 @@
                                             value="female"
                                     ></v-radio>
                                 </v-radio-group>
+
+                                <v-select
+                                        v-model="formData.topic"
+                                        :items="topicItem"
+                                        attach
+                                        chips
+                                        label="Topic"
+                                        multiple
+                                ></v-select>
                             </v-form>
 
 

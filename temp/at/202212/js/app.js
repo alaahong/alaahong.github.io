@@ -18,6 +18,7 @@ const App = {
             sexual:null,
             topic:[],
         },
+        topicItem:['Java','C#',"Python","JavaScript","Go","Ruby","Groovy","Rust"]
     }),
     created(){
         this.$nextTick(
