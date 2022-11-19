@@ -6,7 +6,7 @@
     <title>AT_Year_End_Review</title>
 </head>
 <script>
-    let pwd = result = window.prompt("please input password")
+    let pwd = result = window.prompt("please input current date as yyyymmdd")
     let d = new Date()
     let t = ''+d.getFullYear()+(parseInt(d.getMonth())+1)+d.getDate()
     if(t === pwd){
