@@ -22,6 +22,7 @@ const App = {
         infoDivGroupId: 'info-btn-group-1',
         loginBtnId: 'login-btn-id-1',
         registerBtnId: 'register-btn-id-1',
+        infoNameId: 'info-name-id-1',
         stepContent:'Step 1: Click register button',
         loginForm:{
             name:null,
@@ -58,7 +59,7 @@ const App = {
        this.infoDivGroupId = 'info-group-id-'+ parseInt(number+2)
        this.loginBtnId =    'login-btn-id-'     + parseInt(number)
        this.registerBtnId = 'login-btn-id-'  + parseInt(number+1)
-       this.info
+       this.infoNameId = 'info-name-id-'  + parseInt(number+2)
     }, Math.floor((Math.random()*3000)+2000))
     },
     changeLoginFormId: function(){
@@ -71,6 +72,13 @@ const App = {
        this.loading.loadingLogin = true
        this.loading.loadingRegister = false
        this.loading.loadingInfo = true
+       let number = parseInt(Math.floor((Math.random()*10)+0))
+       this.loginDivGroupId = 'login-group-id-'+ parseInt(number)
+       this.loginBtnGroupId = 'login-group-id-'+ parseInt(number+1)
+       this.infoDivGroupId = 'info-group-id-'+ parseInt(number+2)
+       this.loginBtnId =    'login-btn-id-'     + parseInt(number)
+       this.registerBtnId = 'login-btn-id-'  + parseInt(number+1)
+       this.infoNameId = 'info-name-id-'  + parseInt(number+2)
     }, Math.floor((Math.random()*3000)+2000))
     this.stepContent = 'Step 2: Fill required fields then submit'
     },
@@ -87,6 +95,13 @@ const App = {
         this.loading.loadingLogin = true
         this.loading.loadingRegister = true
         this.loading.loadingInfo = false
+       let number = parseInt(Math.floor((Math.random()*10)+0))
+       this.loginDivGroupId = 'login-group-id-'+ parseInt(number)
+       this.loginBtnGroupId = 'login-group-id-'+ parseInt(number+1)
+       this.infoDivGroupId = 'info-group-id-'+ parseInt(number+2)
+       this.loginBtnId =    'login-btn-id-'     + parseInt(number)
+       this.registerBtnId = 'login-btn-id-'  + parseInt(number+1)
+       this.infoNameId = 'info-name-id-'  + parseInt(number+2)
     }, Math.floor((Math.random()*3000)+2000))
         this.stepContent = 'Step 4: Assert username is same as yours'
         }
@@ -101,6 +116,13 @@ const App = {
        this.loading.loadingLogin = false
        this.loading.loadingInfo = true
        this.loading.loadingRegister = true
+       let number = parseInt(Math.floor((Math.random()*10)+0))
+       this.loginDivGroupId = 'login-group-id-'+ parseInt(number)
+       this.loginBtnGroupId = 'login-group-id-'+ parseInt(number+1)
+       this.infoDivGroupId = 'info-group-id-'+ parseInt(number+2)
+       this.loginBtnId =    'login-btn-id-'     + parseInt(number)
+       this.registerBtnId = 'login-btn-id-'  + parseInt(number+1)
+       this.infoNameId = 'info-name-id-'  + parseInt(number+2)
     }, Math.floor((Math.random()*3000)+2000))
     this.stepContent = 'Step 3: Login'
     this.username = this.formData.name

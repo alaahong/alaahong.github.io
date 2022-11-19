@@ -1,171 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="css/cssfamily.css" rel="stylesheet">
-    <link href="css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="css/vuetify.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta charset="UTF-8">
     <title>AT_Year_End_Review</title>
 </head>
-<body>
-<script type="text/x-template" id="app-template">
-    <v-app>
-        <v-container>
-            <v-row align="center" justify="center">
-                <v-sheet
-                        color="white"
-                        elevation="6"
-                        height="640"
-                        width="480"
-                >
-                    <v-alert
-                            icon="mdi-shield-lock-outline"
-                            prominent
-                            text
-                            type="info"
-                    >
-                        {{stepContent}}
-                    </v-alert>
-                    <div v-show="loading.displayLogin">
-                        <v-skeleton-loader
-                                :loading="loading.loadingLogin"
-                                class="mx-auto"
-                                max-width="480"
-                                type="list-item-two-line, actions"
-                        >
-                            <v-card ref="loginForm">
-                                <v-card-text>
-                                    <div :id="loginDivGroupId">
-                                        <v-text-field v-model="loginForm.name" label="Name" required
-                                                      prepend-icon="mdi-account"
-                                        >
-                                        </v-text-field>
-                                        <v-text-field v-model="loginForm.pwd" label="Password" required
-                                                      type="password" prepend-icon="mdi-lock">
-                                        </v-text-field>
-                                    </div>
-
-                                </v-card-text>
-                                <v-divider class="mt-12"></v-divider>
-                                <v-card-actions :id="loginBtnGroupId">
-                                    <v-row>
-                                        <v-col cols="10">
-                                            <v-btn
-                                                    color="primary" text
-                                                    class="mr-4 login-btn "
-                                                    @click="login"
-                                                    :id="loginBtnId"
-                                            >
-                                                Log
-                                            </v-btn>
-                                            <v-btn
-                                                    color="primary" text
-                                                    class="mr-4 register-btn "
-                                                    @click="showRegister"
-                                                    :id="registerBtnId"
-                                            >
-                                            </v-btn>
-                                        </v-col>
-                                    </v-row>
-                                </v-card-actions>
-                            </v-card>
-                        </v-skeleton-loader>
-                    </div>
-
-                    <div v-show="loading.displayInfo">
-                        <v-skeleton-loader
-                                :loading="loading.loadingInfo"
-                                class="mx-auto"
-                                max-width="480"
-                                type="list-item-two-line, actions"
-                        >
-                            <v-card ref="infoForm">
-                                <v-card-text>
-                                    <div :id="infoDivGroupId">
-                                        <v-text-field v-model="loginForm.name" label="Hey!" required
-                                                      prepend-icon="mdi-account" readonly
-                                        >
-                                        </v-text-field>
-                                    </div>
-                                </v-card-text>
-                            </v-card>
-                        </v-skeleton-loader>
-                    </div>
-                    <div v-show="loading.displayRegister">
-                        <v-skeleton-loader
-                                :loading="loading.loadingRegister"
-                                class="mx-auto"
-                                max-width="480"
-                                type="list-item-avatar, divider, list-item-three-line, card-heading, image, actions"
-                        >
-                            <v-card
-                                    >
-                                <v-card-text>
-                                    <v-form  ref="registerForm" v-model="registerFormValid">
-                                        <v-text-field v-model="formData.name" label="Name" required
-                                                      prepend-icon="mdi-account"           :rules="emptyRules">
-                                        </v-text-field>
-                                        <v-text-field v-model="formData.pwd" label="Password" required type="password"
-                                                      prepend-icon="mdi-lock"        :rules="emptyRules">
-                                        </v-text-field>
-                                        <v-file-input accept="image/*" label="Avatar" v-model="formData.pic" required
-                                                      prepend-icon="mdi-head"     :rules="emptyRules"></v-file-input>
-                                        <v-radio-group v-model="formData.gender" label="Gender" required
-                                                       prepend-icon="mdi-gender-male-female"     :rules="emptyRules">
-                                            <v-radio
-                                                    label="Male"
-                                                    value="male"
-                                            ></v-radio>
-                                            <v-radio
-                                                    label="Female"
-                                                    value="female"
-                                            ></v-radio>
-                                            <v-radio
-                                                    label="Others"
-                                                    value="others"
-                                            ></v-radio>
-                                        </v-radio-group>
-                                        <v-select
-                                                prepend-icon="mdi-hand-heart"
-                                                v-model="formData.topic"
-                                                :items="topicItem"
-                                                attach
-                                                chips
-                                                label="Topic"
-                                                multiple
-                                                hint="please select two options at least"
-                                                persistent-hint
-                                                required
-                                                :rules="emptyArrayRules"
-                                        ></v-select>
-                                    </v-form>
-                                </v-card-text>
-                                <v-divider class="mt-12"></v-divider>
-                                <v-card-actions>
-                                    <div>
-                                        <v-spacer></v-spacer>
-                                        <v-btn
-                                                color="primary" text
-                                                class="mr-4 submit-btn "
-                                                @click="validateForm"
-                                        >
-                                            Submit
-                                        </v-btn>
-                                    </div>
-                                </v-card-actions>
-                            </v-card>
-                        </v-skeleton-loader>
-                    </div>
-                </v-sheet>
-            </v-row>
-        </v-container>
-    </v-app>
+<script>
+    let pwd = result = window.prompt("please input password")
+    let d = new Date()
+    let t = ''+d.getFullYear()+(parseInt(d.getMonth())+1)+d.getDate()
+    if(t === pwd){
+    console.log('pwd is valid')
+    setTimeout(() => {
+       let i = document.createElement('iframe')
+        i.setAttribute("title", "iframe")
+        i.setAttribute("name", "iframe")
+        i.setAttribute("height", "768")
+        i.setAttribute("width", "100%")
+        i.setAttribute("src", "./embed.html")
+        i.setAttribute("scrolling", "no")
+        i.setAttribute("frameborder", "0")
+        document.getElementsByTagName('body')[0].appendChild(i)
+        }, 1000)
+    }else{
+    console.log('pwd is invalid')
+    }
 </script>
-<div id="app"></div>
-<script src="js/vue.js"></script>
-<script src="js/vuetify.js"></script>
-<script src="js/app.js"></script>
+<body>
 </body>
 </html>
