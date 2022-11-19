@@ -103,7 +103,7 @@ const App = {
        this.registerBtnId = 'login-btn-id-'  + parseInt(number+1)
        this.infoNameId = 'info-name-id-'  + parseInt(number+2)
     }, Math.floor((Math.random()*3000)+2000))
-        this.stepContent = 'Step 5: Assert username is same as yours'
+        this.stepContent = 'Step 5: Assert username is same as yours, then take screenshot and output the picture path'
         }
     },
     validateForm(){
