@@ -1,0 +1,6 @@
+.register-btn > span.v-btn__content::before {
+    content: 'REGisTER'
+}
+.login-btn > span.v-btn__content::after {
+     content: 'In'
+}
