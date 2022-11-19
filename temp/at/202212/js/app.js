@@ -23,7 +23,7 @@ const App = {
         loginBtnId: 'login-btn-id-1',
         registerBtnId: 'register-btn-id-1',
         infoNameId: 'info-name-id-1',
-        stepContent:'Step 1: Click register button',
+        stepContent:'Step 2: Click register button',
         loginForm:{
             name:null,
             pwd: 'defaultpwd',
@@ -80,7 +80,7 @@ const App = {
        this.registerBtnId = 'login-btn-id-'  + parseInt(number+1)
        this.infoNameId = 'info-name-id-'  + parseInt(number+2)
     }, Math.floor((Math.random()*3000)+2000))
-    this.stepContent = 'Step 2: Fill required fields then submit'
+    this.stepContent = 'Step 3: Fill required fields then submit'
     },
     login(){
         if(this.username == null || (this.username != this.formData.name)){
@@ -103,7 +103,7 @@ const App = {
        this.registerBtnId = 'login-btn-id-'  + parseInt(number+1)
        this.infoNameId = 'info-name-id-'  + parseInt(number+2)
     }, Math.floor((Math.random()*3000)+2000))
-        this.stepContent = 'Step 4: Assert username is same as yours'
+        this.stepContent = 'Step 5: Assert username is same as yours'
         }
     },
     validateForm(){
@@ -124,7 +124,7 @@ const App = {
        this.registerBtnId = 'login-btn-id-'  + parseInt(number+1)
        this.infoNameId = 'info-name-id-'  + parseInt(number+2)
     }, Math.floor((Math.random()*3000)+2000))
-    this.stepContent = 'Step 3: Login'
+    this.stepContent = 'Step 4: Login'
     this.username = this.formData.name
     this.password = this.formData.pwd
     }
