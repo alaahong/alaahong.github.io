@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--文档类型，代表是一个HTML5页面-->
+<html lang="en">
+<!--html元素，包裹了整个页面-->
+<head>
+    <!--    head元素，可以将除了网页内容以外的大多数元素放置其中-->
+    <meta charset="UTF-8">
+    <!--    指定页面使用UTF-8编码-->
+    <title>Sample</title>
+    <!--    指定页面的title为Selenium-->
+</head>
+<link rel="stylesheet" href="style.css">
+<!--link标签用来定义一些外部资源，常用来声明外部CSS文件-->
+<style type="text/css">
+    body {
+        font-size: 14px;
+    }
+    /* 此处声明了body标签内字体的大小 */
+</style>
+<!--style用来定义页面元素的样式-->
+<script type="text/javascript" src="app.js"></script>
+<!--script标签用来定义一些外部脚本，常用来声明外部JavaScript文件-->
+<script>
+    function notify(){
+        alert('clicking')
+    }
+    //此处定义了一个弹窗
+</script>
+<body>
+<div>
+    <h1>Hello Selenium</h1>
+    <!--    一级标题元素-->
+    <p>paragraph <span>span</span></p>
+    <!--    p元素内嵌套span元素-->
+    <a href="https://selenium.dev" target="_blank">anchor</a>
+    <!--    链接元素指向了Selenium网站-->
+</div>
+<form>
+    <label for="input-id">Input</label>
+    <!--    标签元素，用来标记其他元素-->
+    <input type="text" id="input-id" name="input-name"/>
+    <!--    文本输入元素-->
+    <input type="file">
+    <!--    文件输入元素-->
+    <br>
+    <fieldset>
+        <legend>Radio</legend>
+        <input type="radio" id="radio-1" name="radio-name" value="radio-1">
+        <label>Radio 1</label>
+        <input type="radio" id="radio-2" name="radio-name" value="radio-2">
+        <label>Radio 2</label>
+    </fieldset>
+    <!--    一组单选框-->
+    <fieldset>
+        <legend>Checkbox</legend>
+        <input type="checkbox" id="checkbox-1" name="checkbox-1" checked>
+        <label for="checkbox-1">Checkbox 1</label>
+        <input type="checkbox" id="checkbox-2" name="checkbox-2">
+        <label for="checkbox-2">Checkbox 2</label>
+    </fieldset>
+    <!--    一组复选框-->
+    <select>
+        <option>option1</option>
+        <option>option2</option>
+    </select>
+    <!--    一组下拉框-->
+    <textarea></textarea>
+    <!--    文本区-->
+    <button onclick="notify()">Click Me</button>
+    <!--    按钮-->
+</form>
+<ul>
+    <li>ul-li-1</li>
+    <li>ul-li-2</li>
+</ul>
+<!--无序列表-->
+<ol>
+    <li>ol-li-1</li>
+    <li>ol-li-2</li>
+</ol>
+<!--有序列表-->
+<table border="1">
+    <tr>
+        <td>td1</td>
+        <td>td2</td>
+    </tr>
+</table>
+<!--一组表格-->
+<iframe id="iframe-1" title="selenium" src="https://selenium.dev"></iframe>
+<!--框架，可以嵌入页面-->
+</body>
+</html>

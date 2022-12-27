@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hidden</title>
+</head>
+<style>
+  .hide-1{
+    opacity: 0;
+  }
+  .hide-2{
+    display: none;
+  }
+  .hide-3{
+  visibility: hidden;
+  }
+  .hide-4{
+  position: absolute;
+  top: -99999px;
+  left: -99999px;
+  }
+</style>
+<body>
+<div title="hidden">
+    <h1>Hidden</h1>
+    <div style="opacity: 0;">占位，可交互</div>
+    <div style="height: 0;padding: 0;overflow:hidden; ">占位，ElementNotInteractableException</div>
+    <div style="display: none;">不占位，ElementNotInteractableException</div>
+    <div style="visibility: hidden;">占位，ElementNotInteractableException</div>
+    <div style="position: absolute;top: -99999px;left: -99999px;">不占位，ElementNotInteractableException</div>
+    <div style="clip-path: polygon(0px 0px,0px 0px,0px 0px,0px 0px);">占位，ElementNotInteractableException</div>
+    <div style="transform: scale(0,0)">占位，ElementNotInteractableException</div>
+    <div style="transform: translate(-999px, 0);">占位，ElementNotInteractableException</div>
+    <div hidden>不占位,ElementNotInteractableException</div>
+</div>
+
+
+</body>
+</html>
