@@ -51,7 +51,7 @@
             document.getElementById('footer-year').innerHTML = "-" + new Date().getFullYear()
         }
 
-        // 监听名为 "my_channel" 的广播频道
+        // 监听名为 "Selenium Test" 的广播频道
         const myChannel = new BroadcastChannel("Selenium Test");
 
         // 监听该频道并处理消息
@@ -61,7 +61,7 @@
 
         // 触发发送消息的方法
         function postMessage() {
-            myChannel.postMessage("click time: " + new Date().toISOString())
+            myChannel.postMessage("Hello Selenium")
         }
     </script>
 </head>
