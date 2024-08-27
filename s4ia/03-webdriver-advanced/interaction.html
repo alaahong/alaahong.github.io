@@ -5,38 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interaction</title>
     <style>
-#container {
-  min-height: calc(100vh - 125px);
-}
-.footer {
-    text-align: center;
-    height: 100px;
-}
-.footer-container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
+        #container {
+            min-height: calc(100vh - 125px);
+        }
+
+        .footer {
+            text-align: center;
+            height: 100px;
+        }
+
+        .footer-container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
     </style>
     <script>
-window.onload=function(){
-document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
-}
-function doAlert()
-  {
-  alert("I am an alert")
-  }
-function doConfirm()
-  {
-  let result = confirm("I am a confirm")
-  document.querySelector("#confirm-result").innerHTML  = result
-  }
-function doPrompt()
-  {
-  let result = prompt("What's your name?")
-  document.querySelector("#prompt-result").innerHTML  = result
-  }
+        window.onload = function () {
+            document.getElementById('footer-year').innerHTML = "-" + new Date().getFullYear()
+        }
+
+        function doAlert() {
+            alert("I am an alert")
+        }
+
+        function doConfirm() {
+            let result = confirm("I am a confirm")
+            document.querySelector("#confirm-result").innerHTML = result
+        }
+
+        function doPrompt() {
+            let result = prompt("What's your name?")
+            document.querySelector("#prompt-result").innerHTML = result
+        }
     </script>
 </head>
 <body>
@@ -92,7 +94,7 @@ function doPrompt()
                 </tr>
             </table>
         </div>
-        <img id="embed-pic" >
+        <img id="embed-pic">
     </div>
 </div>
 <footer class="footer">

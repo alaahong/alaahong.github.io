@@ -9,24 +9,26 @@
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
     <link href="https://unpkg.com/vuetify@2.6.12/dist/vuetify.min.css" rel="stylesheet">
     <style>
-#container {
-  min-height: calc(100vh - 125px);
-}
-.footer {
-    text-align: center;
-    height: 100px;
-}
-.footer-container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
+        #container {
+            min-height: calc(100vh - 125px);
+        }
+
+        .footer {
+            text-align: center;
+            height: 100px;
+        }
+
+        .footer-container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
     </style>
     <script>
-window.onload=function(){
-document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
-}
+        window.onload = function () {
+            document.getElementById('footer-year').innerHTML = "-" + new Date().getFullYear()
+        }
     </script>
 </head>
 <body>
@@ -34,10 +36,10 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
     <div id="app">
         <v-app id="inspire">
             <v-toolbar id="nav"
-                    dark  color="teal"
+                       dark color="teal"
             >
                 <v-text-field id="text-field" value="this is a default text"></v-text-field>
-                <v-btn icon  id="search-btn">
+                <v-btn icon id="search-btn">
                     <v-icon>search</v-icon>
                 </v-btn>
             </v-toolbar>
@@ -174,35 +176,35 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
                     </v-sheet>
                 </v-col>
             </v-row>
-<!--            <v-row  id="calendar-2">-->
-<!--                <v-col>-->
-<!--                    <v-sheet height="500">-->
-<!--                        <v-calendar-->
-<!--                                :now="today"-->
-<!--                                :value="today"-->
-<!--                                color="primary"-->
-<!--                        >-->
-<!--                            <template v-slot:day="{ past, date }">-->
-<!--                                <v-row-->
-<!--                                        class="fill-height"-->
-<!--                                >-->
-<!--                                    <template v-if="past && tracked[date]">-->
-<!--                                        <v-sheet-->
-<!--                                                v-for="(percent, i) in tracked[date]"-->
-<!--                                                :key="i"-->
-<!--                                                :title="category[i]"-->
-<!--                                                :color="colors[i]"-->
-<!--                                                :width="`${percent}%`"-->
-<!--                                                height="100%"-->
-<!--                                                tile-->
-<!--                                        ></v-sheet>-->
-<!--                                    </template>-->
-<!--                                </v-row>-->
-<!--                            </template>-->
-<!--                        </v-calendar>-->
-<!--                    </v-sheet>-->
-<!--                </v-col>-->
-<!--            </v-row>-->
+            <!--            <v-row  id="calendar-2">-->
+            <!--                <v-col>-->
+            <!--                    <v-sheet height="500">-->
+            <!--                        <v-calendar-->
+            <!--                                :now="today"-->
+            <!--                                :value="today"-->
+            <!--                                color="primary"-->
+            <!--                        >-->
+            <!--                            <template v-slot:day="{ past, date }">-->
+            <!--                                <v-row-->
+            <!--                                        class="fill-height"-->
+            <!--                                >-->
+            <!--                                    <template v-if="past && tracked[date]">-->
+            <!--                                        <v-sheet-->
+            <!--                                                v-for="(percent, i) in tracked[date]"-->
+            <!--                                                :key="i"-->
+            <!--                                                :title="category[i]"-->
+            <!--                                                :color="colors[i]"-->
+            <!--                                                :width="`${percent}%`"-->
+            <!--                                                height="100%"-->
+            <!--                                                tile-->
+            <!--                                        ></v-sheet>-->
+            <!--                                    </template>-->
+            <!--                                </v-row>-->
+            <!--                            </template>-->
+            <!--                        </v-calendar>-->
+            <!--                    </v-sheet>-->
+            <!--                </v-col>-->
+            <!--            </v-row>-->
         </v-app>
     </div>
 </div>
@@ -221,105 +223,105 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
 <script src="https://www.ianzhang.cn/s4ia/static/js/vuetify/2.6.3/dist/vuetify.js"></script>
 <script>
     new Vue({
-  el: '#app',
-  vuetify: new Vuetify(),
-  data: () => ({
-    focus: '',
-    type: 'month',
-    typeToLabel: {
-      month: 'Month',
-      week: 'Week',
-      day: 'Day',
-      '4day': '4 Days',
-    },
-    selectedEvent: {},
-    selectedElement: null,
-    selectedOpen: false,
-    events: [],
-    colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-1'],
-    names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
-        today: '2019-01-10',
-      tracked: {
-        '2019-01-09': [23, 45, 10],
-        '2019-01-08': [10],
-        '2019-01-07': [0, 78, 5],
-        '2019-01-06': [0, 0, 50],
-        '2019-01-05': [0, 10, 23],
-        '2019-01-04': [2, 90],
-        '2019-01-03': [10, 32],
-        '2019-01-02': [80, 10, 10],
-        '2019-01-01': [20, 25, 10],
-      },
-    //  colors: ['#1867c0', '#fb8c00', '#000000'],
-      category: ['Development', 'Meetings', 'Slacking'],
-  }),
-  mounted () {
-    this.$refs.calendar.checkChange()
-  },
-  methods: {
-    viewDay ({ date }) {
-      this.focus = date
-      this.type = 'day'
-    },
-    getEventColor (event) {
-      return event.color
-    },
-    setToday () {
-      this.focus = ''
-    },
-    prev () {
-      this.$refs.calendar.prev()
-    },
-    next () {
-      this.$refs.calendar.next()
-    },
-    showEvent ({ nativeEvent, event }) {
-      const open = () => {
-        this.selectedEvent = event
-        this.selectedElement = nativeEvent.target
-        requestAnimationFrame(() => requestAnimationFrame(() => this.selectedOpen = true))
-      }
+        el: '#app',
+        vuetify: new Vuetify(),
+        data: () => ({
+            focus: '',
+            type: 'month',
+            typeToLabel: {
+                month: 'Month',
+                week: 'Week',
+                day: 'Day',
+                '4day': '4 Days',
+            },
+            selectedEvent: {},
+            selectedElement: null,
+            selectedOpen: false,
+            events: [],
+            colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-1'],
+            names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
+            today: '2019-01-10',
+            tracked: {
+                '2019-01-09': [23, 45, 10],
+                '2019-01-08': [10],
+                '2019-01-07': [0, 78, 5],
+                '2019-01-06': [0, 0, 50],
+                '2019-01-05': [0, 10, 23],
+                '2019-01-04': [2, 90],
+                '2019-01-03': [10, 32],
+                '2019-01-02': [80, 10, 10],
+                '2019-01-01': [20, 25, 10],
+            },
+            //  colors: ['#1867c0', '#fb8c00', '#000000'],
+            category: ['Development', 'Meetings', 'Slacking'],
+        }),
+        mounted() {
+            this.$refs.calendar.checkChange()
+        },
+        methods: {
+            viewDay({date}) {
+                this.focus = date
+                this.type = 'day'
+            },
+            getEventColor(event) {
+                return event.color
+            },
+            setToday() {
+                this.focus = ''
+            },
+            prev() {
+                this.$refs.calendar.prev()
+            },
+            next() {
+                this.$refs.calendar.next()
+            },
+            showEvent({nativeEvent, event}) {
+                const open = () => {
+                    this.selectedEvent = event
+                    this.selectedElement = nativeEvent.target
+                    requestAnimationFrame(() => requestAnimationFrame(() => this.selectedOpen = true))
+                }
 
-      if (this.selectedOpen) {
-        this.selectedOpen = false
-        requestAnimationFrame(() => requestAnimationFrame(() => open()))
-      } else {
-        open()
-      }
+                if (this.selectedOpen) {
+                    this.selectedOpen = false
+                    requestAnimationFrame(() => requestAnimationFrame(() => open()))
+                } else {
+                    open()
+                }
 
-      nativeEvent.stopPropagation()
-    },
-    updateRange ({ start, end }) {
-      const events = []
+                nativeEvent.stopPropagation()
+            },
+            updateRange({start, end}) {
+                const events = []
 
-      const min = new Date(`${start.date}T00:00:00`)
-      const max = new Date(`${end.date}T23:59:59`)
-      const days = (max.getTime() - min.getTime()) / 86400000
-      const eventCount = this.rnd(days, days + 20)
+                const min = new Date(`${start.date}T00:00:00`)
+                const max = new Date(`${end.date}T23:59:59`)
+                const days = (max.getTime() - min.getTime()) / 86400000
+                const eventCount = this.rnd(days, days + 20)
 
-      for (let i = 0; i < eventCount; i++) {
-        const allDay = this.rnd(0, 3) === 0
-        const firstTimestamp = this.rnd(min.getTime(), max.getTime())
-        const first = new Date(firstTimestamp - (firstTimestamp % 900000))
-        const secondTimestamp = this.rnd(2, allDay ? 288 : 8) * 900000
-        const second = new Date(first.getTime() + secondTimestamp)
+                for (let i = 0; i < eventCount; i++) {
+                    const allDay = this.rnd(0, 3) === 0
+                    const firstTimestamp = this.rnd(min.getTime(), max.getTime())
+                    const first = new Date(firstTimestamp - (firstTimestamp % 900000))
+                    const secondTimestamp = this.rnd(2, allDay ? 288 : 8) * 900000
+                    const second = new Date(first.getTime() + secondTimestamp)
 
-        events.push({
-          name: this.names[this.rnd(0, this.names.length - 1)],
-          start: first,
-          end: second,
-          color: this.colors[this.rnd(0, this.colors.length - 1)],
-          timed: !allDay,
-        })
-      }
+                    events.push({
+                        name: this.names[this.rnd(0, this.names.length - 1)],
+                        start: first,
+                        end: second,
+                        color: this.colors[this.rnd(0, this.colors.length - 1)],
+                        timed: !allDay,
+                    })
+                }
 
-      this.events = events
-    },
-    rnd (a, b) {
-      return Math.floor((b - a + 1) * Math.random()) + a
-    },
-  },
-})
+                this.events = events
+            },
+            rnd(a, b) {
+                return Math.floor((b - a + 1) * Math.random()) + a
+            },
+        },
+    })
 
 
 </script>

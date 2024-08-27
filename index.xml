@@ -4,17 +4,16 @@
     <title>Ian Zhang</title>
     <link>//www.ianzhang.cn/</link>
     <description>Recent content on Ian Zhang</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Apr 2020 14:54:53 +0800</lastBuildDate><atom:link href="//www.ianzhang.cn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Apr 2020 14:54:53 +0800</lastBuildDate>
+    <atom:link href="//www.ianzhang.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>New Blog With Hugo</title>
       <link>//www.ianzhang.cn/2020/04/06/new-blog-with-hugo.html</link>
       <pubDate>Mon, 06 Apr 2020 14:54:53 +0800</pubDate>
-      
       <guid>//www.ianzhang.cn/2020/04/06/new-blog-with-hugo.html</guid>
       <description>最近翻译Selenium官方文档的缘故，接触了Hugo，原本的博客有些年久失修，决定用Hugo重新做一版. 安装Hugo 此段详见官网教程，Wi</description>
     </item>
-    
   </channel>
 </rss>

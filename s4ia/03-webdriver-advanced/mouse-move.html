@@ -5,26 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mouse-move</title>
     <style>
-#container {
-  min-height: calc(100vh - 125px);
-}
-.footer {
-    text-align: center;
-    height: 100px;
-}
-.footer-container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
+        #container {
+            min-height: calc(100vh - 125px);
+        }
+
+        .footer {
+            text-align: center;
+            height: 100px;
+        }
+
+        .footer-container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
     </style>
-<style type="text/css">
-#dnd-box-1, #dnd-box-2
-{float:left; width:200px; height:200px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
-#target-box
-{float:center; width:100px; height:100px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
-</style>
+    <style type="text/css">
+        #dnd-box-1, #dnd-box-2 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+
+        #target-box {
+            float: center;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
 </head>
 <body>
 <div id="container">
@@ -32,7 +47,7 @@
         <h2>drag and drop</h2>
         <div>
             <div id="dnd-box-1" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <div id="target-box" draggable="true" ondragstart="drag(event)" ><p>Let's move</p></div>
+                <div id="target-box" draggable="true" ondragstart="drag(event)"><p>Let's move</p></div>
             </div>
             <div id="dnd-box-2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         </div>
@@ -52,24 +67,23 @@
 </body>
 <script src="https://www.ianzhang.cn/s4ia/static/js/ian/lib/simulateDragDrop.js"></script>
 <script>
-function allowDrop(ev)
-{
-ev.preventDefault();
-}
-function drag(ev)
-{
-ev.dataTransfer.setData("Text",ev.target.id);
-}
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
 
-function drop(ev)
-{
-ev.preventDefault();
-var data=ev.dataTransfer.getData("Text");
-ev.target.appendChild(document.getElementById(data));
-}
-window.οnlοad=function () {
-document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear();
-}
+    function drag(ev) {
+        ev.dataTransfer.setData("Text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+
+    window.οnlοad = function () {
+        document.getElementById('footer-year').innerHTML = "-" + new Date().getFullYear();
+    }
 </script>
 
 </html>

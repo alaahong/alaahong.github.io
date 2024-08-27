@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cookie</title>
     <style>
-#container {
-  min-height: calc(100vh - 125px);
-}
-.footer {
-    text-align: center;
-    height: 100px;
-}
-.footer-container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
+        #container {
+            min-height: calc(100vh - 125px);
+        }
+
+        .footer {
+            text-align: center;
+            height: 100px;
+        }
+
+        .footer-container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
     </style>
 </head>
 <body>
@@ -45,27 +47,29 @@
 </footer>
 </body>
 <script>
-function getCookieByString(cookieName){
-var start = document.cookie.indexOf(cookieName+'=')
-if (start == -1) return ''
-start = start+cookieName.length+1
-var end = document.cookie.indexOf(';', start)
-if (end == -1) end=document.cookie.length
-return document.cookie.substring(start, end)
-}
-function login(username,password){
-return hex_md5(username)
-}
-window.onload=function(){
-let username = 'Hi! ' + getCookieByString('username')
-let sessionId = getCookieByString('sessionid')
-if(username !== '' && sessionId !== ''){
-document.querySelector("#hello-span").innerHTML=username
-}else{
-document.querySelector("#login-link").removeAttribute('hidden')
-}
-document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
-}
+    function getCookieByString(cookieName) {
+        var start = document.cookie.indexOf(cookieName + '=')
+        if (start == -1) return ''
+        start = start + cookieName.length + 1
+        var end = document.cookie.indexOf(';', start)
+        if (end == -1) end = document.cookie.length
+        return document.cookie.substring(start, end)
+    }
+
+    function login(username, password) {
+        return hex_md5(username)
+    }
+
+    window.onload = function () {
+        let username = 'Hi! ' + getCookieByString('username')
+        let sessionId = getCookieByString('sessionid')
+        if (username !== '' && sessionId !== '') {
+            document.querySelector("#hello-span").innerHTML = username
+        } else {
+            document.querySelector("#login-link").removeAttribute('hidden')
+        }
+        document.getElementById('footer-year').innerHTML = "-" + new Date().getFullYear()
+    }
 </script>
 <script src="https://www.ianzhang.cn/s4ia/static/js/ian/lib/md5.js"></script>
 </html>

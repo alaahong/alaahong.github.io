@@ -5,35 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-#container {
-  min-height: calc(100vh - 125px);
-}
-.footer {
-    text-align: center;
-    height: 100px;
-}
-.footer-container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
+        #container {
+            min-height: calc(100vh - 125px);
+        }
+
+        .footer {
+            text-align: center;
+            height: 100px;
+        }
+
+        .footer-container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
     </style>
     <script>
-window.onload=function(){
-document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
-}
-function login(){
-let username = document.querySelector("#username-input").value
-let sessionId = hex_md5(username)
-let d = new Date()
+        window.onload = function () {
+            document.getElementById('footer-year').innerHTML = "-" + new Date().getFullYear()
+        }
+
+        function login() {
+            let username = document.querySelector("#username-input").value
+            let sessionId = hex_md5(username)
+            let d = new Date()
 //d.setTime(d.getTime()+(days*24*60*60*1000))
-d.setTime(d.getTime()+(10*1000))
-let expires = "expires="+d.toGMTString()
-document.cookie = "sessionid=" + sessionId + "; " + expires
-document.cookie = "username=" + username + "; " + expires
-window.location.href="https://www.ianzhang.cn/s4ia/03-webdriver-advanced/cookie.html"
-}
+            d.setTime(d.getTime() + (10 * 1000))
+            let expires = "expires=" + d.toGMTString()
+            document.cookie = "sessionid=" + sessionId + "; " + expires
+            document.cookie = "username=" + username + "; " + expires
+            window.location.href = "https://www.ianzhang.cn/s4ia/03-webdriver-advanced/cookie.html"
+        }
     </script>
 </head>
 <body>
@@ -44,8 +47,9 @@ window.location.href="https://www.ianzhang.cn/s4ia/03-webdriver-advanced/cookie.
             <form action="#" method="get">
                 <div><label for="username-input">Username:</label><input id="username-input" type="text"></div>
                 <div><label for="password-input">Password:</label><input id="password-input" type="password"></div>
-                <div><input type="button" id="submit-btn" value="Submit" onclick="login()"/> <input type="reset" id="reset-btn"
-                                                                                  value="Reset"></div>
+                <div><input type="button" id="submit-btn" value="Submit" onclick="login()"/> <input type="reset"
+                                                                                                    id="reset-btn"
+                                                                                                    value="Reset"></div>
             </form>
         </div>
     </div>

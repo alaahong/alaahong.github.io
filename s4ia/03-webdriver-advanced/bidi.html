@@ -4,63 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BiDi</title>
-<style>
-#container {
-  min-height: calc(100vh - 125px);
-}
-.footer {
-    text-align: center;
-    height: 100px;
-}
-.footer-container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-.g {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 1px;
-  grid-row-gap: 1px;
+    <style>
+        #container {
+            min-height: calc(100vh - 125px);
+        }
 
-  @media screen and (min-width: 500px){
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+        .footer {
+            text-align: center;
+            height: 100px;
+        }
 
-  @media screen and (min-width: 800px){
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-.g div {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  color: black;
-  line-height: 1;
-  cursor: pointer;
-  transition: all .3s ease;
-}
-</style>
-<script>
-window.onload=function(){
-document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
-let observer = new MutationObserver(function (mutations, observer) {
-  mutations.forEach(function(mutation) {
-    console.log(mutation);
-  });
-});
-let moInput = document.querySelector('#mo-input');
-observer.observe(moInput, {
-  attributes: true,
-  characterData: true,
-  childList: true,
-  subtree: true,
-  attributeOldValue: true,
-  characterDataOldValue: true
-});
-}
-</script>
+        .footer-container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .g {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 1px;
+            grid-row-gap: 1px;
+
+            @media screen and (min-width: 500px) {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            @media screen and (min-width: 800px) {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+
+        .g div {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            color: black;
+            line-height: 1;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            document.getElementById('footer-year').innerHTML = "-" + new Date().getFullYear()
+            let observer = new MutationObserver(function (mutations, observer) {
+                mutations.forEach(function (mutation) {
+                    console.log(mutation);
+                });
+            });
+            let moInput = document.querySelector('#mo-input');
+            observer.observe(moInput, {
+                attributes: true,
+                characterData: true,
+                childList: true,
+                subtree: true,
+                attributeOldValue: true,
+                characterDataOldValue: true
+            });
+        }
+    </script>
 </head>
 <body>
 <div id="container">

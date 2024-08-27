@@ -9,40 +9,58 @@
     <script src="https://www.ianzhang.cn/s4ia/static/js/jquery/1.9.1/jquery-1.9.1.js"></script>
     <script src="https://www.ianzhang.cn/s4ia/static/js/jquery-ui/1.10.4/jquery-ui.js"></script>
     <script>
-  $(function() {
-    $( "#draggable" ).draggable();
-  });
+        $(function () {
+            $("#draggable").draggable();
+        });
     </script>
     <style>
-body {
-	font-family: Arial, Helvetica, sans-serif;
-}
-table {
-	font-size: 1em;
-}
-.ui-draggable, .ui-droppable {
-	background-position: top;
-}
-#container {
-  min-height: calc(100vh - 125px);
-}
-.footer {
-    text-align: center;
-    height: 100px;
-}
-.footer-container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        table {
+            font-size: 1em;
+        }
+
+        .ui-draggable, .ui-droppable {
+            background-position: top;
+        }
+
+        #container {
+            min-height: calc(100vh - 125px);
+        }
+
+        .footer {
+            text-align: center;
+            height: 100px;
+        }
+
+        .footer-container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
     </style>
-<style type="text/css">
-#dnd-box-1, #dnd-box-2
-{float:left; width:200px; height:200px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
-#target-box
-{float:center; width:100px; height:100px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
-</style>
+    <style type="text/css">
+        #dnd-box-1, #dnd-box-2 {
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+
+        #target-box {
+            float: center;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
 </head>
 <body>
 <div id="container">
@@ -69,9 +87,9 @@ table {
 </footer>
 </body>
 <script>
-window.οnlοad=function () {
-document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear();
-}
+    window.οnlοad = function () {
+        document.getElementById('footer-year').innerHTML = "-" + new Date().getFullYear();
+    }
 </script>
 
 </html>
