@@ -21,6 +21,25 @@
             margin-left: auto;
         }
     </style>
+    <script type="text/javascript" >
+        window.onload = function () {
+            document.getElementById('footer-year').innerHTML = "-" + new Date().getFullYear()
+        }
+
+        function doAlert() {
+            alert("I am an alert")
+        }
+
+        function doConfirm() {
+            let result = confirm("I am a confirm")
+            document.querySelector("#confirm-result").innerHTML = result
+        }
+
+        function doPrompt() {
+            let result = prompt("What's your name?")
+            document.querySelector("#prompt-result").innerHTML = result
+        }
+    </script>
 </head>
 <body>
 <div id="container">
@@ -90,23 +109,4 @@
     </div>
 </footer>
 </body>
-<script>
-    window.onload = function () {
-        document.getElementById('footer-year').innerHTML = "-" + new Date().getFullYear()
-    }
-
-    function doAlert() {
-        alert("I am an alert")
-    }
-
-    function doConfirm() {
-        let result = confirm("I am a confirm")
-        document.querySelector("#confirm-result").innerHTML = result
-    }
-
-    function doPrompt() {
-        let result = prompt("What's your name?")
-        document.querySelector("#prompt-result").innerHTML = result
-    }
-</script>
 </html>
