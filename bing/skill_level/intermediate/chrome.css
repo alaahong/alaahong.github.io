@@ -1,0 +1,7 @@
+#hello p:before{
+        content : "hello";
+         color: red;
+}
+#hello p{
+         color: red;
+}
