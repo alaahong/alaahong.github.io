@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  从开源“小透明”到 Apache Committer · 手中执剑,方能保护所爱之人
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Ian zhang">
+<meta name="description" content="从开源“小透明”到 Apache CommitterLink to heading近日，我收到了 Apache Software Foundation (ASF) 的邀请，以 Apache Fesod PPMC 成员 的身份正式成为一名 Apache Committer。
+GitHub 我已使用十余年，过去也曾长期活跃在国际知名的开源软件社区。这一次，借由一个由国内发起的项目进入 ASF，算是“出口转内销”，让我再次以新人姿态融入到一个更大的开源社区。这段经历值得记录。
+1. 开源“小透明”Link to heading我的开源起点并不早。学生时代，开源还远没有今天这么普及。学习主要依赖书籍和课堂，能接触到的开源元素可能就是当年 Ubuntu 官方寄来的免费光盘。
+那时的课程项目多半封闭在实验室或公司内部。第一次真正接触到 GitHub 上的开源项目，是因为一次参加我司的编程马拉松。当时的练手题是一个开源 Quiz：length。那是我第一次在网上 fork 项目、提交 commit 并完成迭代，对当时的我来说，充满新鲜感。
+不过由于工作环境的特质，又身处“IT 荒漠”的天津，我与开源的联系断断续续，除了偶尔参加 meet-up，几乎没有太多贡献。那几年，我甚至连博客都很少更新。
+2. 步入开源Link to heading真正让我与开源建立紧密联系的，是工作中的需求。
+彼时，我有幸孵化了内部的自动化测试团队，这让我接触到 Selenium、Cucumber 和 Appium。在团队内部，我们成功打造了一个服务于近百个系统的自动化测试框架和平台。
+如果不是疫情，也许我会继续只做开源的使用者。但疫情带来的停摆，让我有机会沉下心来深入研究这些软件。随着对它们的理解加深，我开始尝试从 typo 和文档 入手，逐步走向代码层面的提交。
+等到疫情结束时，我已经成为 Selenium、Appium、Cucumber 三大社区的 Member，并在 GitHub 上活跃着。而且，似乎我是唯一来自于大陆又同是这三家社区的 Member 的人。
+开源的影响不仅仅停留在“写代码”：
+WebDriver 的特性让我更深入理解了 W3C 规范与浏览器实现； Selenium 让我更加关注 Web 与浏览器底层机制； 我们甚至有机会将线上笔试题开源，虽然即使这样，招到每一个合适的候选人的过程都很艰难：Java 开发、自动化测试。 开源在潜移默化中提升了我的研发视野，也让我第一次在行业中找到了方向。">
+<meta name="keywords" content="blog,developer">
+
+
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="从开源“小透明”到 Apache Committer">
+<meta name="twitter:description" content="从开源“小透明”到 Apache CommitterLink to heading近日，我收到了 Apache Software Foundation (ASF) 的邀请，以 Apache Fesod PPMC 成员 的身份正式成为一名 Apache Committer。
+GitHub 我已使用十余年，过去也曾长期活跃在国际知名的开源软件社区。这一次，借由一个由国内发起的项目进入 ASF，算是“出口转内销”，让我再次以新人姿态融入到一个更大的开源社区。这段经历值得记录。
+1. 开源“小透明”Link to heading我的开源起点并不早。学生时代，开源还远没有今天这么普及。学习主要依赖书籍和课堂，能接触到的开源元素可能就是当年 Ubuntu 官方寄来的免费光盘。
+那时的课程项目多半封闭在实验室或公司内部。第一次真正接触到 GitHub 上的开源项目，是因为一次参加我司的编程马拉松。当时的练手题是一个开源 Quiz：length。那是我第一次在网上 fork 项目、提交 commit 并完成迭代，对当时的我来说，充满新鲜感。
+不过由于工作环境的特质，又身处“IT 荒漠”的天津，我与开源的联系断断续续，除了偶尔参加 meet-up，几乎没有太多贡献。那几年，我甚至连博客都很少更新。
+2. 步入开源Link to heading真正让我与开源建立紧密联系的，是工作中的需求。
+彼时，我有幸孵化了内部的自动化测试团队，这让我接触到 Selenium、Cucumber 和 Appium。在团队内部，我们成功打造了一个服务于近百个系统的自动化测试框架和平台。
+如果不是疫情，也许我会继续只做开源的使用者。但疫情带来的停摆，让我有机会沉下心来深入研究这些软件。随着对它们的理解加深，我开始尝试从 typo 和文档 入手，逐步走向代码层面的提交。
+等到疫情结束时，我已经成为 Selenium、Appium、Cucumber 三大社区的 Member，并在 GitHub 上活跃着。而且，似乎我是唯一来自于大陆又同是这三家社区的 Member 的人。
+开源的影响不仅仅停留在“写代码”：
+WebDriver 的特性让我更深入理解了 W3C 规范与浏览器实现； Selenium 让我更加关注 Web 与浏览器底层机制； 我们甚至有机会将线上笔试题开源，虽然即使这样，招到每一个合适的候选人的过程都很艰难：Java 开发、自动化测试。 开源在潜移默化中提升了我的研发视野，也让我第一次在行业中找到了方向。">
+
+<meta property="og:url" content="//www.ianzhang.cn/posts/%E4%BB%8E%E5%BC%80%E6%BA%90%E5%B0%8F%E9%80%8F%E6%98%8E%E5%88%B0apachecommitter/">
+  <meta property="og:site_name" content="手中执剑,方能保护所爱之人">
+  <meta property="og:title" content="从开源“小透明”到 Apache Committer">
+  <meta property="og:description" content="从开源“小透明”到 Apache CommitterLink to heading近日，我收到了 Apache Software Foundation (ASF) 的邀请，以 Apache Fesod PPMC 成员 的身份正式成为一名 Apache Committer。
+GitHub 我已使用十余年，过去也曾长期活跃在国际知名的开源软件社区。这一次，借由一个由国内发起的项目进入 ASF，算是“出口转内销”，让我再次以新人姿态融入到一个更大的开源社区。这段经历值得记录。
+1. 开源“小透明”Link to heading我的开源起点并不早。学生时代，开源还远没有今天这么普及。学习主要依赖书籍和课堂，能接触到的开源元素可能就是当年 Ubuntu 官方寄来的免费光盘。
+那时的课程项目多半封闭在实验室或公司内部。第一次真正接触到 GitHub 上的开源项目，是因为一次参加我司的编程马拉松。当时的练手题是一个开源 Quiz：length。那是我第一次在网上 fork 项目、提交 commit 并完成迭代，对当时的我来说，充满新鲜感。
+不过由于工作环境的特质，又身处“IT 荒漠”的天津，我与开源的联系断断续续，除了偶尔参加 meet-up，几乎没有太多贡献。那几年，我甚至连博客都很少更新。
+2. 步入开源Link to heading真正让我与开源建立紧密联系的，是工作中的需求。
+彼时，我有幸孵化了内部的自动化测试团队，这让我接触到 Selenium、Cucumber 和 Appium。在团队内部，我们成功打造了一个服务于近百个系统的自动化测试框架和平台。
+如果不是疫情，也许我会继续只做开源的使用者。但疫情带来的停摆，让我有机会沉下心来深入研究这些软件。随着对它们的理解加深，我开始尝试从 typo 和文档 入手，逐步走向代码层面的提交。
+等到疫情结束时，我已经成为 Selenium、Appium、Cucumber 三大社区的 Member，并在 GitHub 上活跃着。而且，似乎我是唯一来自于大陆又同是这三家社区的 Member 的人。
+开源的影响不仅仅停留在“写代码”：
+WebDriver 的特性让我更深入理解了 W3C 规范与浏览器实现； Selenium 让我更加关注 Web 与浏览器底层机制； 我们甚至有机会将线上笔试题开源，虽然即使这样，招到每一个合适的候选人的过程都很艰难：Java 开发、自动化测试。 开源在潜移默化中提升了我的研发视野，也让我第一次在行业中找到了方向。">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-03T17:48:54+08:00">
+    <meta property="article:modified_time" content="2025-10-03T17:48:54+08:00">
+
+
+
+
+<link rel="canonical" href="//www.ianzhang.cn/posts/%E4%BB%8E%E5%BC%80%E6%BA%90%E5%B0%8F%E9%80%8F%E6%98%8E%E5%88%B0apachecommitter/">
+
+
+<link rel="preload" href="//www.ianzhang.cn/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="//www.ianzhang.cn/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="//www.ianzhang.cn/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="//www.ianzhang.cn/css/coder.min.c8e4eea149ae1dc7c61ba9b0781793711a4e657f7e07a4413f9abc46d52dffc4.css" integrity="sha256-yOTuoUmuHcfGG6mweBeTcRpOZX9&#43;B6RBP5q8RtUt/8Q=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="//www.ianzhang.cn/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="//www.ianzhang.cn/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="//www.ianzhang.cn/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="//www.ianzhang.cn/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="//www.ianzhang.cn/images/apple-touch-icon.png">
+
+<link rel="manifest" href="//www.ianzhang.cn/site.webmanifest">
+<link rel="mask-icon" href="//www.ianzhang.cn/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+<body class="preload-transitions colorscheme-light">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a3c1fbfd1174592b0c27655ddccef107";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+    </script>
+    <section class="container">
+        <a class="navigation-title" href="//www.ianzhang.cn/">
+            手中执剑,方能保护所爱之人
+        </a>
+        
+        <input type="checkbox" id="menu-toggle"/>
+        <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+        <ul class="navigation-list">
+            
+            
+            <li class="navigation-item">
+                <a class="navigation-link" href="//www.ianzhang.cn/posts/">Blog</a>
+            </li>
+            
+            <li class="navigation-item">
+                <a class="navigation-link" href="//www.ianzhang.cn/tags/">Tags</a>
+            </li>
+            
+            <li class="navigation-item">
+                <a class="navigation-link" href="//www.ianzhang.cn/categories/">Categories</a>
+            </li>
+            
+            <li class="navigation-item">
+                <a class="navigation-link" href="//www.ianzhang.cn/resume_public/resume_2025.html">About</a>
+            </li>
+            
+            
+            
+        </ul>
+
+        
+    </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="//www.ianzhang.cn/posts/%E4%BB%8E%E5%BC%80%E6%BA%90%E5%B0%8F%E9%80%8F%E6%98%8E%E5%88%B0apachecommitter/">
+              从开源“小透明”到 Apache Committer
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-10-03T17:48:54&#43;08:00">
+                October 3, 2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h1 id="从开源小透明到-apache-committer">
+  从开源“小透明”到 Apache Committer
+  <a class="heading-link" href="#%e4%bb%8e%e5%bc%80%e6%ba%90%e5%b0%8f%e9%80%8f%e6%98%8e%e5%88%b0-apache-committer">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>近日，我收到了 Apache Software Foundation (ASF) 的邀请，以 <strong>Apache Fesod PPMC 成员</strong> 的身份正式成为一名 <strong>Apache Committer</strong>。</p>
+<p>GitHub 我已使用十余年，过去也曾长期活跃在国际知名的开源软件社区。这一次，借由一个由国内发起的项目进入 ASF，算是“出口转内销”，让我再次以新人姿态融入到一个更大的开源社区。这段经历值得记录。</p>
+<hr>
+<h2 id="1-开源小透明">
+  1. 开源“小透明”
+  <a class="heading-link" href="#1-%e5%bc%80%e6%ba%90%e5%b0%8f%e9%80%8f%e6%98%8e">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>我的开源起点并不早。学生时代，开源还远没有今天这么普及。学习主要依赖书籍和课堂，能接触到的开源元素可能就是当年 Ubuntu 官方寄来的免费光盘。</p>
+<p>那时的课程项目多半封闭在实验室或公司内部。第一次真正接触到 GitHub 上的开源项目，是因为一次参加我司的编程马拉松。当时的练手题是一个开源 Quiz：<code>length</code>。那是我第一次在网上 fork 项目、提交 commit 并完成迭代，对当时的我来说，充满新鲜感。</p>
+<p>不过由于工作环境的特质，又身处“IT 荒漠”的天津，我与开源的联系断断续续，除了偶尔参加 meet-up，几乎没有太多贡献。那几年，我甚至连博客都很少更新。</p>
+<hr>
+<h2 id="2-步入开源">
+  2. 步入开源
+  <a class="heading-link" href="#2-%e6%ad%a5%e5%85%a5%e5%bc%80%e6%ba%90">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>真正让我与开源建立紧密联系的，是工作中的需求。</p>
+<p>彼时，我有幸孵化了内部的自动化测试团队，这让我接触到 <strong>Selenium、Cucumber 和 Appium</strong>。在团队内部，我们成功打造了一个服务于近百个系统的自动化测试框架和平台。</p>
+<p>如果不是疫情，也许我会继续只做开源的使用者。但疫情带来的停摆，让我有机会沉下心来深入研究这些软件。随着对它们的理解加深，我开始尝试从 <strong>typo 和文档</strong> 入手，逐步走向代码层面的提交。</p>
+<p>等到疫情结束时，我已经成为 <strong>Selenium、Appium、Cucumber 三大社区的 Member</strong>，并在 GitHub 上活跃着。而且，似乎我是唯一来自于大陆又同是这三家社区的 Member 的人。</p>
+<p><img src="img.png" alt="img.png">
+<img src="img_1.png" alt="img_1.png">
+<img src="img_2.png" alt="img_2.png"></p>
+<p>开源的影响不仅仅停留在“写代码”：</p>
+<ul>
+<li><strong>WebDriver</strong> 的特性让我更深入理解了 W3C 规范与浏览器实现；</li>
+<li><strong>Selenium</strong> 让我更加关注 Web 与浏览器底层机制；</li>
+<li>我们甚至有机会将线上笔试题开源，虽然即使这样，招到每一个合适的候选人的过程都很艰难：Java 开发、自动化测试。</li>
+</ul>
+<p>开源在潜移默化中提升了我的研发视野，也让我第一次在行业中找到了方向。</p>
+<p>我还记得第一次收到 Selenium 社区核心成员 <strong>Diego</strong> 的社区礼物时，为疫情期间如何收货海外快递发愁。</p>
+<p><img src="img_3.png" alt="img_3.png"></p>
+<p>也记得我的第一次社会公开主题演讲 <strong>《站在测试金字塔的顶端保障质量》</strong>，就是基于这些开源经历。</p>
+<p><img src="img_4.png" alt="img_4.png"></p>
+<p>虽然后来因工作重心转向质量效能，和最初活跃的社区交集渐小，但一些习惯保留了下来，比如每年以何种方式出现在 Selenium 的 <strong>State of the Union</strong>。</p>
+<h2 id="img_5pngimg_5png">
+  <img src="img_5.png" alt="img_5.png">
+  <a class="heading-link" href="#img_5pngimg_5png">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h2 id="3-新的阶段">
+  3. 新的阶段
+  <a class="heading-link" href="#3-%e6%96%b0%e7%9a%84%e9%98%b6%e6%ae%b5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>与 Fesod 的结缘，是一个意外。</p>
+<p>早年我就用过 <strong>EasyExcel</strong>。它简单易用，性能也不错，我也偶尔 commit。</p>
+<p><img src="img_6.png" alt="img_6.png"></p>
+<p>但随着作者离开创业，项目逐渐停更，阿里官方也宣布停止维护。对企业用户来说，这样的组件风险极大。</p>
+<p><img src="img_7.png" alt="img_7.png"></p>
+<p>年初，在我研究 <strong>Serverless 相关报表实现规范</strong> 时，发现了 <strong>FastExcel</strong>。它几乎与 EasyExcel 一脉相承，并且功能更丰富，解决了不少实际问题。我随即深入社区。</p>
+<p>当时 FastExcel 的仓库里虽然有大量单测与集成测试，但大多已无法正常执行，CI 也屏蔽了全量测试。我心想，“这你受得了么”，于是断断续续在几个月的时间里把大部分测试重构了一遍，使得每次提交都能触发核心用例的执行，每天也有执行耗时数百分钟的全量回归，极大保障了质量。随着熟悉度提升，我也逐步参与功能的设计和提交。很快，我收到了 Shuxin 的邀请，成为社区协作者。</p>
+<p><img src="img_8.png" alt="img_8.png"></p>
+<p>后面的事情就有些水到渠成了：<br>
+社区成员熟络于开源活动，项目有稳定的运营团队，项目被各式各样的项目所依赖。小伙伴们联系到了 ASF 的 Board，提交了捐献的 Proposal，凑足 Mentor 团队，经过一段时间的项目规范化以及 Vote，项目更名为 <strong>Fesod (Fast easy spreadsheet and other documents)</strong>，成功进入了 <strong>Apache Incubator Projects</strong>。于是秋天的某个早晨，我收到了 ASF 的邀请，正式成为 Apache Committer。</p>
+<p><img src="img_9.png" alt="img_9.png"></p>
+<p>相比之前的国际化社区，Fesod 社区人数虽少，但响应积极、氛围活跃。这里让我收获了许多新知识，例如：</p>
+<ul>
+<li><strong>Excel 引用偏移</strong> 的实现 [PR#581]</li>
+<li><strong>Mac 1904 日期体系</strong> 的兼容 [PR#435]</li>
+<li><strong>FuzzTest</strong> 等体系化质量保障机制 [Issue#521]</li>
+</ul>
+<p>如今，Fesod 在 GitHub 上已有 <strong>5k+ stars</strong>，贡献者遍布亚太地区，社区正蓬勃发展。</p>
+<h2 id="img_10pngimg_10png">
+  <img src="img_10.png" alt="img_10.png">
+  <a class="heading-link" href="#img_10pngimg_10png">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h2 id="4-写在最后">
+  4. 写在最后
+  <a class="heading-link" href="#4-%e5%86%99%e5%9c%a8%e6%9c%80%e5%90%8e">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>开源不是速成营。<br>
+它更像是一面镜子，折射出你对 <strong>协作、耐心与结构化思考</strong> 的真实状态。</p>
+<p><strong>Committer/Member 权限不是身份标签，而是守护职责的象征。</strong></p>
+<p>如果你正站在门外犹豫，不妨：<br>
+👉 从“解决一个自己真正遇到的问题”开始，然后交给时间和复利。</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        <div id="disqus_thread"></div>
+<script>
+  window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yourdiscussshortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    
+    document.addEventListener('themeChanged', function (e) { 
+        if (document.readyState == 'complete') {
+          DISQUS.reset({ reload: true, config: disqus_config });
+        }
+    });
+</script>
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css"
+    integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+  
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"
+    integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,
+      {
+        delimiters: [
+          {left: '$$', right: '$$', display:true},
+          {left: '$', right: '$', display:false},
+          {left: '\\(', right: '\\)', display: false},
+          {left: '\\[', right: '\\]', display: true}
+        ]
+      }
+    );"></script>
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     Ian zhang 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="//www.ianzhang.cn/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+  
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

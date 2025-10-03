@@ -6,8 +6,15 @@
     <description>Recent content on 手中执剑,方能保护所爱之人</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Apr 2020 14:54:53 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 03 Oct 2025 17:48:54 +0800</lastBuildDate>
     <atom:link href="//www.ianzhang.cn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从开源“小透明”到 Apache Committer</title>
+      <link>//www.ianzhang.cn/posts/%E4%BB%8E%E5%BC%80%E6%BA%90%E5%B0%8F%E9%80%8F%E6%98%8E%E5%88%B0apachecommitter/</link>
+      <pubDate>Fri, 03 Oct 2025 17:48:54 +0800</pubDate>
+      <guid>//www.ianzhang.cn/posts/%E4%BB%8E%E5%BC%80%E6%BA%90%E5%B0%8F%E9%80%8F%E6%98%8E%E5%88%B0apachecommitter/</guid>
+      <description>从开源“小透明”到 Apache Committer&#xD;Link to heading&#xD;近日，我收到了 Apache Software Foundation (ASF) 的邀请，以 Apache Fesod PPMC 成员 的身份正式成为一名 Apache Committer。&#xA;GitHub 我已使用十余年，过去也曾长期活跃在国际知名的开源软件社区。这一次，借由一个由国内发起的项目进入 ASF，算是“出口转内销”，让我再次以新人姿态融入到一个更大的开源社区。这段经历值得记录。&#xA;1. 开源“小透明”&#xD;Link to heading&#xD;我的开源起点并不早。学生时代，开源还远没有今天这么普及。学习主要依赖书籍和课堂，能接触到的开源元素可能就是当年 Ubuntu 官方寄来的免费光盘。&#xA;那时的课程项目多半封闭在实验室或公司内部。第一次真正接触到 GitHub 上的开源项目，是因为一次参加我司的编程马拉松。当时的练手题是一个开源 Quiz：length。那是我第一次在网上 fork 项目、提交 commit 并完成迭代，对当时的我来说，充满新鲜感。&#xA;不过由于工作环境的特质，又身处“IT 荒漠”的天津，我与开源的联系断断续续，除了偶尔参加 meet-up，几乎没有太多贡献。那几年，我甚至连博客都很少更新。&#xA;2. 步入开源&#xD;Link to heading&#xD;真正让我与开源建立紧密联系的，是工作中的需求。&#xA;彼时，我有幸孵化了内部的自动化测试团队，这让我接触到 Selenium、Cucumber 和 Appium。在团队内部，我们成功打造了一个服务于近百个系统的自动化测试框架和平台。&#xA;如果不是疫情，也许我会继续只做开源的使用者。但疫情带来的停摆，让我有机会沉下心来深入研究这些软件。随着对它们的理解加深，我开始尝试从 typo 和文档 入手，逐步走向代码层面的提交。&#xA;等到疫情结束时，我已经成为 Selenium、Appium、Cucumber 三大社区的 Member，并在 GitHub 上活跃着。而且，似乎我是唯一来自于大陆又同是这三家社区的 Member 的人。&#xA;开源的影响不仅仅停留在“写代码”：&#xA;WebDriver 的特性让我更深入理解了 W3C 规范与浏览器实现； Selenium 让我更加关注 Web 与浏览器底层机制； 我们甚至有机会将线上笔试题开源，虽然即使这样，招到每一个合适的候选人的过程都很艰难：Java 开发、自动化测试。 开源在潜移默化中提升了我的研发视野，也让我第一次在行业中找到了方向。</description>
+    </item>
     <item>
       <title>New Blog With Hugo</title>
       <link>//www.ianzhang.cn/posts/new-blog-with-hugo/</link>
