@@ -46,23 +46,42 @@ document.getElementById('footer-year').innerHTML= "-" + new Date().getFullYear()
 <body>
 <div id="container">
     <!--定义一个3X3的九宫格表格-->
-    <table>
-        <tr id="tr1">
+    <table style="border-collapse: separate; border-spacing: 0;">
+        <tbody>
+        <tr id="tr1" style="height: 80px; display: table-row;">
             <td id="td1">1</td>
             <td id="td2">2</td>
             <td id="td3">3</td>
         </tr>
-        <tr id="tr2">
+        <tr id="tr2" style="height: 80px; display: table-row;">
             <td id="td4">4</td>
             <td id="td5">5</td>
             <td id="td6">6</td>
         </tr>
-        <tr id="tr3">
+        <tr id="tr3" style="height: 80px; display: table-row;">
             <td id="td7">7</td>
             <td id="td8">8</td>
             <td id="td9">9</td>
         </tr>
+        </tbody>
     </table>
+<!--    <table>-->
+<!--        <tr id="tr1">-->
+<!--            <td id="td1">1</td>-->
+<!--            <td id="td2">2</td>-->
+<!--            <td id="td3">3</td>-->
+<!--        </tr>-->
+<!--        <tr id="tr2">-->
+<!--            <td id="td4">4</td>-->
+<!--            <td id="td5">5</td>-->
+<!--            <td id="td6">6</td>-->
+<!--        </tr>-->
+<!--        <tr id="tr3">-->
+<!--            <td id="td7">7</td>-->
+<!--            <td id="td8">8</td>-->
+<!--            <td id="td9">9</td>-->
+<!--        </tr>-->
+<!--    </table>-->
 
 </div>
 <footer class="footer">
