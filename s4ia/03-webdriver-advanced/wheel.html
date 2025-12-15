@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Wheel Actions</title>
+    <style>
+        body { font-family: sans-serif; margin: 24px; }
+        #scroll-box {
+            width: 360px;
+            height: 220px;
+            border: 1px solid #555;
+            overflow: hidden;
+            position: relative;
+        }
+        #content {
+            height: 1000px;
+            padding: 12px;
+            background: linear-gradient(#ffffff, #d9ecff);
+        }
+        #log {
+            margin-top: 16px;
+            white-space: pre-line;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            padding: 8px;
+            min-height: 90px;
+            line-height: 1.4;
+        }
+        #summary { margin-top: 8px; font-size: 14px; color: #333; }
+    </style>
+</head>
+<body>
+<h2>Wheel Scroll Demo</h2>
+<p>Scroll inside the box below; the log will capture dx/dy/dz, timestamps, and whether Ctrl is pressed.</p>
+<div id="scroll-box">
+    <div id="content">Use the mouse wheel or trackpad here; every event will appear in the log.</div>
+</div>
+<div id="summary">Events: 0, Total dx: 0, Total dy: 0, Last timestamp: -</div>
+<div id="log" data-count="0"></div>
+
+<script>
+    const box = document.getElementById('scroll-box');
+    const summary = document.getElementById('summary');
+    const log = document.getElementById('log');
+    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+    const state = {
+        totalDx: 0,
+        totalDy: 0,
+        lastTimestamp: '-',
+        events: []
+    };
+
+    const appendEntry = (entry) => {
+        state.events.push(entry);
+        state.totalDx += entry.dx;
+        state.totalDy += entry.dy;
+        state.lastTimestamp = entry.time;
+        const line = `t=${entry.time} dx=${entry.dx.toFixed(1)} dy=${entry.dy.toFixed(1)} dz=${entry.dz.toFixed(1)} ctrl=${entry.ctrl}`;
+        log.textContent += `${line}\n`;
+        log.dataset.count = state.events.length;
+        summary.textContent =
+            `Events: ${state.events.length}, Total dx: ${state.totalDx.toFixed(1)}, ` +
+            `Total dy: ${state.totalDy.toFixed(1)}, Last timestamp: ${state.lastTimestamp}`;
+    };
+
+    box.addEventListener('wheel', (event) => {
+        event.preventDefault();
+        box.scrollLeft = clamp(box.scrollLeft + event.deltaX, 0, box.scrollWidth);
+        box.scrollTop = clamp(box.scrollTop + event.deltaY, 0, box.scrollHeight);
+        appendEntry({
+            dx: event.deltaX,
+            dy: event.deltaY,
+            dz: event.deltaZ,
+            ctrl: event.ctrlKey,
+            time: Date.now()
+        });
+    }, { passive: false });
+</script>
+</body>
+</html>
