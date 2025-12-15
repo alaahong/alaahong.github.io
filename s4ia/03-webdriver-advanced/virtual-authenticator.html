@@ -26,9 +26,9 @@
 </head>
 <body>
 <div id="container">
-  <h2>虚拟验签演示</h2>
-  <button id="register">注册凭证</button>
-  <button id="authenticate" disabled>发起认证</button>
+  <h2>Virtual Authenticator Demo</h2>
+  <button id="register">Register Credential</button>
+  <button id="authenticate" disabled>Start Authentication</button>
   <div id="log"></div>
 </div>
 
@@ -65,15 +65,16 @@
       const credential = await navigator.credentials.create({ publicKey });
       lastCredentialId = new Uint8Array(credential.rawId);
       document.getElementById('authenticate').disabled = false;
-      log(`注册成功\ncredId=${bytesToB64(lastCredentialId)}`);
+      log(`Registration succeeded
+credId=${bytesToB64(lastCredentialId)}`);
     } catch (e) {
-      log(`注册失败: ${e.message}`);
+      log(`Registration failed: ${e.message}`);
     }
   };
 
   document.getElementById('authenticate').onclick = async () => {
     if (!lastCredentialId) {
-      log('请先注册凭证');
+      log('Please register a credential first');
       return;
     }
     try {
@@ -88,9 +89,10 @@
           }]
         }
       });
-      log(`认证成功\ncredId=${bytesToB64(assertion.rawId)}`);
+      log(`Authentication succeeded
+credId=${bytesToB64(assertion.rawId)}`);
     } catch (e) {
-      log(`认证失败: ${e.message}`);
+      log(`Authentication failed: ${e.message}`);
     }
   };
 </script>
