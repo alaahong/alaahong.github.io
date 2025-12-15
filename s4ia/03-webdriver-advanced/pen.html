@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Pen Actions Demo</title>
+    <style>
+        body { font-family: sans-serif; margin: 24px; }
+        #board { border: 1px solid #333; touch-action: none; }
+        #log { margin-top: 12px; white-space: pre-line; font-size: 14px; }
+    </style>
+</head>
+<body>
+<h2>Pen Pointer</h2>
+<canvas id="board" width="500" height="300"></canvas>
+<div id="log"></div>
+
+<script>
+    const canvas = document.getElementById('board');
+    const ctx = canvas.getContext('2d');
+    const log = document.getElementById('log');
+
+    let drawing = false;
+    const append = (msg) => log.textContent += `${msg}\n`;
+
+    const handlePointerDown = (event) => {
+        if (event.pointerType !== 'pen') return;
+        drawing = true;
+        ctx.beginPath();
+        ctx.moveTo(event.offsetX, event.offsetY);
+        append(`down x=${event.offsetX.toFixed(1)} y=${event.offsetY.toFixed(1)} pressure=${event.pressure}`);
+    };
+
+    const handlePointerMove = (event) => {
+        if (!drawing || event.pointerType !== 'pen') return;
+        ctx.lineWidth = 2 + event.pressure * 4;
+        ctx.lineTo(event.offsetX, event.offsetY);
+        ctx.stroke();
+        append(`move x=${event.offsetX.toFixed(1)} y=${event.offsetY.toFixed(1)} pressure=${event.pressure}`);
+    };
+
+    const handlePointerUp = (event) => {
+        if (event.pointerType !== 'pen') return;
+        drawing = false;
+        append(`up x=${event.offsetX.toFixed(1)} y=${event.offsetY.toFixed(1)} pressure=${event.pressure}`);
+    };
+
+    canvas.addEventListener('pointerdown', handlePointerDown);
+    canvas.addEventListener('pointermove', handlePointerMove);
+    canvas.addEventListener('pointerup', handlePointerUp);
+    canvas.addEventListener('pointerleave', () => (drawing = false));
+</script>
+</body>
+</html>
