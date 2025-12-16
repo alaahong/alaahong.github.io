@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Touch Pointer</title>
+    <style>
+        #board {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #333;
+            touch-action: none; /* 防止浏览器默认滚动/缩放干扰 */
+            margin: 20px;
+        }
+        #log {
+            font-family: monospace;
+            white-space: pre-line;
+            border: 1px solid #ccc;
+            padding: 8px;
+            height: 120px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>Touch Pointer Test</h1>
+
+<div id="board"></div>
+
+<h2>Log</h2>
+<div id="log"></div>
+
+<script>
+    const board = document.getElementById('board');
+    const log = document.getElementById('log');
+
+    function appendLog(message) {
+        const time = new Date().toISOString().substr(11, 8); // HH:MM:SS
+        log.textContent += `[${time}] ${message}\n`;
+    }
+
+    // 只对 pointerType = 'touch' 记录日志
+    function handlePointerEvent(type, e) {
+        if (e.pointerType !== 'touch') {
+            return;
+        }
+        appendLog(`${type} pointerType=${e.pointerType} id=${e.pointerId} x=${e.clientX} y=${e.clientY}`);
+    }
+
+    board.addEventListener('pointerdown', e => handlePointerEvent('down', e));
+    board.addEventListener('pointermove', e => handlePointerEvent('move', e));
+    board.addEventListener('pointerup',   e => handlePointerEvent('up',   e));
+    board.addEventListener('pointercancel', e => handlePointerEvent('cancel', e));
+</script>
+</body>
+</html>
