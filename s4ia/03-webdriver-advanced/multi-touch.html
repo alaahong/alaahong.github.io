@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Multi Touch</title>
+    <style>
+        #board {
+            width: 320px;
+            height: 320px;
+            border: 2px solid #333;
+            margin: 20px;
+            touch-action: none; /* 禁止浏览器默认滚动/缩放 */
+            position: relative;
+        }
+        #log {
+            font-family: monospace;
+            white-space: pre-line;
+            border: 1px solid #ccc;
+            padding: 8px;
+            height: 140px;
+            overflow-y: auto;
+            margin: 20px;
+        }
+        #status {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Multi Touch Test</h1>
+
+<div id="board"></div>
+
+<div id="status">status: idle</div>
+<h2>Log</h2>
+<div id="log"></div>
+
+<script>
+    const board = document.getElementById('board');
+    const log = document.getElementById('log');
+    const status = document.getElementById('status');
+
+    // 当前在 board 上活跃的指针: { pointerId -> {x, y} }
+    const activeTouches = new Map();
+    let initialDistance = null;
+    let lastScale = null;
+
+    function appendLog(message) {
+        const time = new Date().toISOString().substr(11, 8);
+        log.textContent += `[${time}] ${message}\n`;
+        log.scrollTop = log.scrollHeight;
+    }
+
+    function distance(p1, p2) {
+        const dx = p1.x - p2.x;
+        const dy = p1.y - p2.y;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    function updateStatus() {
+        if (initialDistance == null || lastScale == null) {
+            status.textContent = 'status: idle';
+            return;
+        }
+        status.textContent = `status: pinch scale=${lastScale.toFixed(2)}`;
+    }
+
+    function handlePointerDown(e) {
+        if (e.pointerType !== 'touch') return;
+        // 只追踪在 board 区域的触点
+        activeTouches.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        appendLog(`down id=${e.pointerId} type=${e.pointerType} x=${e.clientX} y=${e.clientY}`);
+
+        if (activeTouches.size === 2) {
+            const it = activeTouches.values();
+            const p1 = it.next().value;
+            const p2 = it.next().value;
+            initialDistance = distance(p1, p2);
+            lastScale = 1.0;
+            appendLog(`pinch-start distance=${initialDistance.toFixed(2)}`);
+            updateStatus();
+        }
+    }
+
+    function handlePointerMove(e) {
+        if (e.pointerType !== 'touch') return;
+        if (!activeTouches.has(e.pointerId)) return;
+
+        activeTouches.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        appendLog(`move id=${e.pointerId} type=${e.pointerType} x=${e.clientX} y=${e.clientY}`);
+
+        // 只有在双指时才计算缩放
+        if (activeTouches.size === 2 && initialDistance != null) {
+            const it = activeTouches.values();
+            const p1 = it.next().value;
+            const p2 = it.next().value;
+            const currentDistance = distance(p1, p2);
+            if (initialDistance > 0) {
+                lastScale = currentDistance / initialDistance;
+                appendLog(`pinch-move scale=${lastScale.toFixed(2)}`);
+                updateStatus();
+            }
+        }
+    }
+
+    function handlePointerUpOrCancel(e) {
+        if (e.pointerType !== 'touch') return;
+        appendLog(`up/cancel id=${e.pointerId} type=${e.pointerType}`);
+        activeTouches.delete(e.pointerId);
+
+        // 少于两指，结束本次缩放
+        if (activeTouches.size < 2) {
+            if (initialDistance != null && lastScale != null) {
+                appendLog(`pinch-end final-scale=${lastScale.toFixed(2)}`);
+            }
+            initialDistance = null;
+            lastScale = null;
+            updateStatus();
+        }
+    }
+
+    board.addEventListener('pointerdown', handlePointerDown);
+    board.addEventListener('pointermove', handlePointerMove);
+    board.addEventListener('pointerup', handlePointerUpOrCancel);
+    board.addEventListener('pointercancel', handlePointerUpOrCancel);
+</script>
+</body>
+</html>
