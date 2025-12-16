@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Ctrl + Wheel Zoom</title>
+    <style>
+        #canvas {
+            width: 300px;
+            height: 200px;
+            border: 2px solid #333;
+            margin: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        #box {
+            width: 100px;
+            height: 60px;
+            margin: 40px auto;
+            background: #4caf50;
+            transition: transform 0.1s linear;
+        }
+        #log {
+            font-family: monospace;
+            white-space: pre-line;
+            border: 1px solid #ccc;
+            padding: 8px;
+            height: 150px;
+            overflow-y: auto;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Ctrl + Wheel Zoom Test</h1>
+
+<div id="canvas">
+    <div id="box"></div>
+</div>
+
+<p>current scale: <span id="scale">1.00</span></p>
+
+<h2>Log</h2>
+<div id="log"></div>
+
+<script>
+    const canvas = document.getElementById('canvas');
+    const box = document.getElementById('box');
+    const scaleSpan = document.getElementById('scale');
+    const log = document.getElementById('log');
+
+    let scale = 1.0;
+
+    function appendLog(message) {
+        const time = new Date().toISOString().substr(11, 8);
+        log.textContent += `[${time}] ${message}\n`;
+        log.scrollTop = log.scrollHeight;
+    }
+
+    canvas.addEventListener('wheel', (e) => {
+        appendLog(`wheel deltaY=${e.deltaY} ctrlKey=${e.ctrlKey}`);
+
+        // 只有按住 Ctrl 时才缩放
+        if (!e.ctrlKey) {
+            return;
+        }
+
+        e.preventDefault(); // 阻止默认页面缩放/滚动
+
+        // 简单缩放逻辑：向下滚(deltaY>0)缩小，向上滚放大
+        const factor = e.deltaY < 0 ? 1.1 : 0.9;
+        scale *= factor;
+
+        // 限制缩放范围
+        scale = Math.max(0.5, Math.min(3.0, scale));
+
+        box.style.transform = `scale(${scale})`;
+        scaleSpan.textContent = scale.toFixed(2);
+        appendLog(`zoom scale=${scale.toFixed(2)}`);
+    }, { passive: false });
+</script>
+</body>
+</html>
