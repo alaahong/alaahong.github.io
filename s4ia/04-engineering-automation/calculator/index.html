@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    #calc-app {
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      width: 280px;
+    }
+
+    #calc-display {
+      background-color: #000;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    #calc-display-main {
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: #0f0;
+      font-size: 24px;
+      text-align: right;
+    }
+
+    #calc-display-main:focus {
+      outline: none;
+    }
+
+    #calc-keyboard {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .calc-key {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .calc-key.operator {
+      background-color: #ff9500;
+      color: #fff;
+    }
+
+    .calc-key.digit,
+    .calc-key.decimal {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .calc-key.function-key {
+      background-color: #555;
+      color: #fff;
+    }
+
+    .calc-key:active {
+      opacity: 0.7;
+    }
+
+    .key-wide {
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body id="calc-page" data-page-type="calculator" data-version="1.0.0">
+
+<div id="calc-app" class="calculator" data-role="calculator-app">
+  <div id="calc-display" class="calculator-display" data-role="display">
+    <input id="calc-display-main" data-role="display-main" type="text" readonly value="0" />
+  </div>
+
+  <div id="calc-keyboard" class="calculator-keyboard" data-role="keyboard">
+    <!-- Row 1: Clear / Clear Entry / Divide / Multiply -->
+    <button id="calc-key-clear-all" class="calc-key function-key" data-role="key-clear-all">C</button>
+    <button id="calc-key-clear-entry" class="calc-key function-key" data-role="key-clear-entry">CE</button>
+    <button id="calc-key-op-div" class="calc-key operator" data-role="key-operator" data-op="div">/</button>
+    <button id="calc-key-op-mul" class="calc-key operator" data-role="key-operator" data-op="mul">*</button>
+
+    <!-- Row 2: 7 8 9 - -->
+    <button id="calc-key-digit-7" class="calc-key digit" data-role="key-digit" data-value="7">7</button>
+    <button id="calc-key-digit-8" class="calc-key digit" data-role="key-digit" data-value="8">8</button>
+    <button id="calc-key-digit-9" class="calc-key digit" data-role="key-digit" data-value="9">9</button>
+    <button id="calc-key-op-sub" class="calc-key operator" data-role="key-operator" data-op="sub">-</button>
+
+    <!-- Row 3: 4 5 6 + -->
+    <button id="calc-key-digit-4" class="calc-key digit" data-role="key-digit" data-value="4">4</button>
+    <button id="calc-key-digit-5" class="calc-key digit" data-role="key-digit" data-value="5">5</button>
+    <button id="calc-key-digit-6" class="calc-key digit" data-role="key-digit" data-value="6">6</button>
+    <button id="calc-key-op-add" class="calc-key operator" data-role="key-operator" data-op="add">+</button>
+
+    <!-- Row 4: 1 2 3 = -->
+    <button id="calc-key-digit-1" class="calc-key digit" data-role="key-digit" data-value="1">1</button>
+    <button id="calc-key-digit-2" class="calc-key digit" data-role="key-digit" data-value="2">2</button>
+    <button id="calc-key-digit-3" class="calc-key digit" data-role="key-digit" data-value="3">3</button>
+    <button id="calc-key-equal" class="calc-key function-key" data-role="key-equal">=</button>
+
+    <!-- Row 5: 0 (wide) . -->
+    <button id="calc-key-digit-0" class="calc-key digit key-wide" data-role="key-digit" data-value="0">0</button>
+    <button id="calc-key-decimal" class="calc-key decimal" data-role="key-decimal" data-value=".">.</button>
+  </div>
+</div>
+
+<script src="calculator.js"></script>
+
+</body>
+</html>
